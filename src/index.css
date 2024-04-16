@@ -1,13 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* ==================== FONT FAMILY ================= */
+@font-face {
+  font-family: Lato;
+  font-weight: 900;
+  src: url("./assets/fonts/Lato-Black_2.ttf");
+}
+
+@font-face {
+  font-family: Lato;
+  font-weight: 800;
+  src: url("./assets/fonts/Lato-Heavy_1.ttf");
+}
+
+@font-face {
+  font-family: Lato;
+  font-weight: 700;
+  src: url("./assets/fonts/Lato-Bold_2.ttf");
+}
+
+@font-face {
+  font-family: Lato;
+  font-weight: 600;
+  src: url("./assets/fonts/Lato-Medium_0.ttf");
+}
+
+@font-face {
+  font-family: Lato;
+  font-weight: 500;
+  src: url("./assets/fonts/Lato-Regular_2.ttf");
+}
+
+@font-face {
+  font-family: Lato;
+  font-weight: 400;
+  src: url("./assets/fonts/Lato-Light_3.ttf");
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
