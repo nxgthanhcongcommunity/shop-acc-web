@@ -6,3 +6,4 @@ export { ReactComponent as CartShoppingIcon } from "./cart-shopping.svg";
 export { ReactComponent as UserIcon } from "./user.svg";
 export { ReactComponent as StartIcon } from "./star.svg";
 export { ReactComponent as EmptyStartIcon } from "./star--empty.svg";
+export { ReactComponent as GamePadIcon } from "./gamepad.svg";
