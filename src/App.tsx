@@ -4,9 +4,9 @@ import { HomePage } from "./pages";
 
 function App() {
   return (
-    <div className="bg-bodyBackground min-h-screen text-white">
+    <div className="min-h-screen bg-bodyBackground text-white">
       <Header />
-      <div className="max-w-[1400px] mx-auto">
+      <div className="mx-auto max-w-[1400px] bg-[#080325]">
         <HomePage />
       </div>
     </div>

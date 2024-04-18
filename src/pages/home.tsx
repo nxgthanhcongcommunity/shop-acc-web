@@ -1,7 +1,12 @@
-import { MainSlider } from "../components";
+import { MainSlider, SubSlider } from "../components";
 
 const Home = (props: any) => {
-  return <MainSlider />;
+  return (
+    <>
+      <MainSlider />
+      <SubSlider />
+    </>
+  );
 };
 
 export default Home;
