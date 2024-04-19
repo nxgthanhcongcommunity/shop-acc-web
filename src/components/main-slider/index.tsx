@@ -14,15 +14,16 @@ import NaviagtionButton from "../NavigationButton";
 import SliderItem from "./slider-item";
 
 const MainSlider = (props: any) => {
+
   return (
     <Swiper
       spaceBetween={30}
       centeredSlides={true}
       loop={true}
-      autoplay={{
-        delay: 10000,
-        disableOnInteraction: false,
-      }}
+      // autoplay={{
+      //   delay: 10000,
+      //   disableOnInteraction: false,
+      // }}
       pagination={{
         clickable: true,
         bulletClass: "c-swiper-pagination-bullet",
