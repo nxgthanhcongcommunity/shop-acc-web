@@ -70,10 +70,10 @@ const Header = (props: any) => {
     <header
       className={`fixed left-0 top-0 z-50 w-screen duration-150 ${isScrolled ? "h-[50px] bg-bodyBackground" : "h-[80px] bg-headerBackground"}`}
     >
-      <div className="mx-auto flex h-full max-w-[1170px] items-center justify-between">
+      <div className="mx-auto flex h-full items-center justify-between px-6 lg:max-w-[1170px] lg:px-0">
         <div className="flex items-center gap-x-12">
           <Logo />
-          <ul className="flex gap-x-6">
+          <ul className="hidden gap-x-6 lg:flex ">
             {menuItems.map((item, index) => (
               <li>
                 <MenuItem key={index} {...item} />
@@ -81,7 +81,7 @@ const Header = (props: any) => {
             ))}
           </ul>
         </div>
-        <div className="">
+        <div className="hidden lg:block">
           <ul className="flex items-center gap-x-6">
             <li>
               <SearchBar />

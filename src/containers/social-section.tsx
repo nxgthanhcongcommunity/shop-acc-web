@@ -6,7 +6,7 @@ const SocialSection = () => {
     <section className="relative z-10 mt-20 flex h-[50vh] flex-col items-center justify-between overflow-hidden">
       <div className="absolute left-0 top-0 -z-20 h-full w-full">
         <Parallax translateY={[-30, 30]}>
-          <div className="relative z-20 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:bg-[#160962] before:opacity-10">
+          <div className="relative z-20 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:bg-[#160962] before:opacity-20">
             <img
               src="https://html.nkdev.info/youplay/assets/images/dark/footer-bg.jpg"
               alt=""
