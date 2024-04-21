@@ -1,3 +1,4 @@
+import { BarsIcon } from "../assets/icons";
 import Cart from "../components/cart";
 import Logo from "../components/logo";
 import MenuItem from "../components/menu-item";
@@ -92,6 +93,9 @@ const Header = (props: any) => {
             <UserMenuItem />
           </ul>
         </div>
+        <span>
+          <BarsIcon width={30} height={30} />
+        </span>
       </div>
     </header>
   );
