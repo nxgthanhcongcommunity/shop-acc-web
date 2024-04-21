@@ -1,8 +1,4 @@
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
 import { Autoplay } from "swiper/modules";
 
 import "./sub-slider.css";
@@ -17,7 +13,7 @@ const SubSlider = {
     },
   ],
 
-  Style1: (props: ISubSliderProps) => {
+  ContentCenter: (props: ISubSliderProps) => {
     return (
       <Swiper
         slidesPerView={4}
@@ -31,8 +27,8 @@ const SubSlider = {
           disableOnInteraction: false,
         }}
       >
-        {[1, 2, 3, 4, 1, 1, 1, 1, 1, 11].map(() => (
-          <SwiperSlide>
+        {[1, 2, 3, 4, 1, 1, 1, 1, 1, 11].map((item, index) => (
+          <SwiperSlide key={index}>
             <div className="absolute z-10 flex h-full w-full flex-col items-center justify-center gap-y-6">
               <h4 className="text-center text-xl font-bold tracking-wider">
                 Lord of fallen
@@ -70,7 +66,8 @@ const SubSlider = {
       </Swiper>
     );
   },
-  Style2: (props: ISubSliderProps) => {
+
+  ContentBottom: (props: ISubSliderProps) => {
     return (
       <Swiper
         slidesPerView={4}
@@ -84,8 +81,8 @@ const SubSlider = {
           disableOnInteraction: false,
         }}
       >
-        {[1, 2, 3, 4, 1, 1, 1, 1, 1, 11].map(() => (
-          <SwiperSlide>
+        {[1, 2, 3, 4, 1, 1, 1, 1, 1, 11].map((item, index) => (
+          <SwiperSlide key={index}>
             <div className="-skew-x-6">
               <div className="relative before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:bg-[#160962] before:opacity-40 before:hover:opacity-20">
                 <img

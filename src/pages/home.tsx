@@ -1,15 +1,19 @@
-import { MainSlider, SubSlider, GameWidget, WhyUsWidget } from "../components";
+import { MainSlider, SubSlider } from "../components";
+import { SocialSection } from "../containers";
+import { AccountCategorySection, Header, WhyUsSection } from "../containers";
 
 const Home = (props: any) => {
   return (
-    <>
-      <MainSlider />
-      <SubSlider.Style1 />
-      <GameWidget title="Acc đột kích" />
-      <GameWidget title="Acc DragonBall" />
-      <GameWidget title="Events" />
-      <WhyUsWidget />
-    </>
+    <div className="min-h-screen bg-bodyBackground text-white">
+      <Header logined />
+      <div className="mx-auto max-w-[1400px] bg-[#080325]">
+        <MainSlider />
+        <SubSlider.ContentCenter />
+        <AccountCategorySection />
+        <WhyUsSection />
+        <SocialSection />
+      </div>
+    </div>
   );
 };
 

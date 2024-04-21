@@ -10,5 +10,7 @@ export { ReactComponent as GamePadIcon } from "./gamepad.svg";
 export { ReactComponent as SquareNofillIcon } from "./square-nofill.svg";
 export { ReactComponent as SquareCheckIcon } from "./square-check.svg";
 export { ReactComponent as XmarkIcon } from "./xmark.svg";
+export { ReactComponent as MomoIcon } from "./momo_icon_square_pinkbg.svg";
+export { ReactComponent as CreditCardIcon } from "./credit-card.svg";
 
 //xmark.svg

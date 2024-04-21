@@ -1,20 +1,10 @@
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
 import "./bullet.css";
 
-// import required modules
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import NaviagtionButton from "../NavigationButton";
-import SliderItem from "./slider-item";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import NaviagtionButton from "./navigation-button";
 
 const MainSlider = (props: any) => {
-
   return (
     <Swiper
       spaceBetween={30}
@@ -33,13 +23,22 @@ const MainSlider = (props: any) => {
       className="mySwiper1 group h-[600px]"
     >
       <SwiperSlide>
-        <SliderItem />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SliderItem />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SliderItem />
+        <div className="relative h-full w-full bg-[url('https://html.nkdev.info/youplay/assets/images/dark/game-dark-souls-ii-2-1920x1248.jpg')] bg-cover bg-[center_top] after:absolute after:bottom-0 after:left-0 after:right-0 after:top-0 after:bg-[#160962] after:opacity-40"></div>
+        <div className="absolute left-[10%] top-1/2 w-[40%] -translate-y-[40%]">
+          <h1 className="text-5xl font-semibold tracking-wide">
+            KINGDOMS OF AMALUR: RECKHONG
+          </h1>
+          <div className="h-8"></div>
+          <div
+            className="text-md inline-block cursor-pointer border-2 px-[30px] py-[10px] font-medium hover:border-[#d92b4c] hover:bg-[#d92b4c]"
+            style={{
+              transform: "skew(-7deg)",
+              transition: ".3s background ease, .3s border ease",
+            }}
+          >
+            Purchase
+          </div>
+        </div>
       </SwiperSlide>
 
       <NaviagtionButton navType="prev" />

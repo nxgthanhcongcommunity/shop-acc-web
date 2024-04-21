@@ -7,6 +7,20 @@
   margin: 0;
 }
 
+/* ==================== SCROLL BAR ================= */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #495670;
+  border: 3px solid #011424;
+  /* border-radius: 10px; */
+}
+::-webkit-scrollbar-track {
+  background: #011424;
+}
+
 /* ==================== FONT FAMILY ================= */
 @font-face {
   font-family: Lato;
