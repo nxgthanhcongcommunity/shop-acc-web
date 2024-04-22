@@ -3,4 +3,5 @@ export { default as SubSlider } from "./sub-slider";
 export { default as Section } from "./section";
 export { default as Button } from "./button";
 export { default as MobileNavbar } from "./mobile-navbar";
-//MobileNavbar
+export { default as MobileMenuItem } from "./mobile-menu-item";
+//MobileMenuItem

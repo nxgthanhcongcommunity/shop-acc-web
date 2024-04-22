@@ -2,6 +2,7 @@ import { BarsIcon } from "../assets/icons";
 import Cart from "../components/cart";
 import Logo from "../components/logo";
 import MenuItem from "../components/menu-item";
+import MenuToggle from "../components/menu-toggle";
 import SearchBar from "../components/search-bar";
 import UserMenuItem from "../components/user-menu-item";
 import { useScroll } from "../hooks";
@@ -93,9 +94,7 @@ const Header = (props: any) => {
             <UserMenuItem />
           </ul>
         </div>
-        <span>
-          <BarsIcon width={30} height={30} />
-        </span>
+        <MenuToggle />
       </div>
     </header>
   );

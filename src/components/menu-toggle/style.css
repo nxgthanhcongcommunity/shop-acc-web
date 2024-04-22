@@ -1,0 +1,28 @@
+
+.menu-toggle {
+    @apply lg:hidden relative w-[50px] h-[50px] shadow-[0_10px_10px_rgba(0,0,0,0.2)] flex justify-center items-center overflow-hidden cursor-pointer
+}
+
+.menu-toggle__line {
+    @apply absolute w-8 h-[3px] bg-slate-200 rounded transition-[0.4s] left-[20px]
+}
+
+.menu-toggle__line:first-child {
+    @apply  translate-y-[-10px] w-[25px] delay-[0.125s]
+}
+
+.menu-toggle__line:last-child {
+    @apply  translate-y-[10px] w-[15px] delay-[0.25s]
+}
+
+.menu-toggle.actived .menu-toggle__line:first-child {
+    @apply translate-x-[60px] rotate-[360deg]
+}
+
+.menu-toggle.actived .menu-toggle__line:nth-child(2) {
+    @apply translate-x-[0px] rotate-[calc(45deg)] w-6
+}
+
+.menu-toggle.actived .menu-toggle__line:last-child {
+    @apply translate-y-[0px] rotate-[315deg] w-6
+}

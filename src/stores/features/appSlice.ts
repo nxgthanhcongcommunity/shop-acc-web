@@ -2,19 +2,19 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
 const initialState = {
-  isShowUnloginHiddenContainer: false,
+  activedMobileNav: false,
 };
 
 export const appSlice = createSlice({
   name: "app",
   initialState,
   reducers: {
-    setIsShowUnloginHiddenContainer: (state, action: PayloadAction<boolean>) => {
-      state.isShowUnloginHiddenContainer = action.payload
+    setActivedMobileNav: (state, action: PayloadAction<boolean>) => {
+      state.activedMobileNav = action.payload
     },
   },
 });
 
-export const { setIsShowUnloginHiddenContainer } = appSlice.actions;
+export const { setActivedMobileNav } = appSlice.actions;
 
 export default appSlice.reducer;
