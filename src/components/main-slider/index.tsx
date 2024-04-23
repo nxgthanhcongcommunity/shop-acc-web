@@ -20,12 +20,18 @@ const MainSlider = (props: any) => {
         bulletActiveClass: "c-swiper-pagination-bullet--active",
       }}
       modules={[Autoplay, Pagination, Navigation]}
-      className="mySwiper1 group h-[600px]"
+      className="mySwiper1 group lg:h-[60vh] h-full"
     >
       <SwiperSlide>
-        <div className="relative h-full w-full bg-[url('https://html.nkdev.info/youplay/assets/images/dark/game-dark-souls-ii-2-1920x1248.jpg')] bg-cover bg-[center_top] after:absolute after:bottom-0 after:left-0 after:right-0 after:top-0 after:bg-[#160962] after:opacity-40"></div>
-        <div className="absolute left-[10%] top-1/2 w-[40%] -translate-y-[40%]">
-          <h1 className="text-5xl font-semibold tracking-wide">
+        <div className="absolute before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:bg-[#160962] before:opacity-40">
+          <img
+            className="h-full"
+            src="https://html.nkdev.info/youplay/assets/images/dark/game-dark-souls-ii-2-1920x1248.jpg"
+            alt=""
+          />
+        </div>
+        <div className="absolute w-full h-full left-0 top-1/2 -translate-y-1/2 flex items-center">
+          <h1 className="text-3xl lg:text-5xl font-semibold tracking-wide">
             KINGDOMS OF AMALUR: RECKHONG
           </h1>
           <div className="h-8"></div>

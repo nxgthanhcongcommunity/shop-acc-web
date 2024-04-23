@@ -8,10 +8,7 @@ const NaviagtionButton = (props: any) => {
 
   return (
     <div
-      className={`absolute opacity-0 group-hover:opacity-100 ${isPrev ? "left-4" : "right-4"} top-1/2 z-20 -translate-y-1/2 -skew-x-6 -skew-y-6 cursor-pointer bg-headerBackground px-1 py-8`}
-      style={{
-        transition: ".3s ease",
-      }}
+      className={`absolute opacity-0 group-hover:opacity-100 ${isPrev ? "left-4" : "right-4"} top-1/2 z-20 -translate-y-1/2 -skew-x-6 -skew-y-6 cursor-pointer bg-headerBackground px-1 py-8 duration-300 ease-in-out`}
       onClick={() => {
         if (isPrev) {
           swiper.slidePrev();
