@@ -3,6 +3,7 @@ import "./bullet.css";
 
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import NaviagtionButton from "./navigation-button";
+import Button from "../button";
 
 const MainSlider = (props: any) => {
   return (
@@ -20,30 +21,25 @@ const MainSlider = (props: any) => {
         bulletActiveClass: "c-swiper-pagination-bullet--active",
       }}
       modules={[Autoplay, Pagination, Navigation]}
-      className="mySwiper1 group lg:h-[60vh] h-full"
+      className="group"
     >
       <SwiperSlide>
-        <div className="absolute before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:bg-[#160962] before:opacity-40">
+        <div className="relative h-[60vh]">
+          <div className="absolute h-full w-full bg-[#160962] opacity-40"></div>
           <img
-            className="h-full"
+            className="h-full object-cover lg:h-auto"
             src="https://html.nkdev.info/youplay/assets/images/dark/game-dark-souls-ii-2-1920x1248.jpg"
             alt=""
           />
         </div>
-        <div className="absolute w-full h-full left-0 top-1/2 -translate-y-1/2 flex items-center">
-          <h1 className="text-3xl lg:text-5xl font-semibold tracking-wide">
+        <div className="absolute left-[10%] top-1/2 flex -translate-y-1/2 flex-col items-start">
+          <h1 className="text-2xl font-semibold tracking-wide lg:text-5xl">
             KINGDOMS OF AMALUR: RECKHONG
           </h1>
-          <div className="h-8"></div>
-          <div
-            className="text-md inline-block cursor-pointer border-2 px-[30px] py-[10px] font-medium hover:border-[#d92b4c] hover:bg-[#d92b4c]"
-            style={{
-              transform: "skew(-7deg)",
-              transition: ".3s background ease, .3s border ease",
-            }}
-          >
-            Purchase
-          </div>
+          <div className="h-6"></div>
+          <Button.SM>
+            <span className="">Mua hàng</span>
+          </Button.SM>
         </div>
       </SwiperSlide>
 

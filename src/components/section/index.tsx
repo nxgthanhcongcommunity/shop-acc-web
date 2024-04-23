@@ -3,9 +3,9 @@ import Button from "../button";
 const Section = ({ title, seeMoreUrl, children }: any) => {
   return (
     <section className="mt-8">
-      <header className="flex justify-between px-20 py-12">
-        <h2 className="text-5xl font-medium">{title}</h2>
-        {("" + seeMoreUrl).length > 0 && <Button.MD>See more</Button.MD>}
+      <header className="flex justify-between px-6 py-12 lg:px-20">
+        <h2 className="text-3xl font-medium lg:text-5xl">{title}</h2>
+        {("" + seeMoreUrl).length > 0 && <Button.SM>See more</Button.SM>}
       </header>
       {children}
     </section>

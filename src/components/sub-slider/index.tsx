@@ -16,9 +16,14 @@ const SubSlider = {
   ContentCenter: (props: ISubSliderProps) => {
     return (
       <Swiper
-        slidesPerView={4}
+        slidesPerView={2}
+        breakpoints={{
+          768: {
+            slidesPerView: 4,
+          },
+        }}
         spaceBetween={0}
-        className="sub-slider"
+        className="sub-slider h-[180px] lg:h-auto"
         loop={true}
         modules={[Autoplay]}
         centeredSlides={true}
@@ -30,24 +35,24 @@ const SubSlider = {
         {[1, 2, 3, 4, 1, 1, 1, 1, 1, 11].map((item, index) => (
           <SwiperSlide key={index}>
             <div className="absolute z-10 flex h-full w-full flex-col items-center justify-center gap-y-6">
-              <h4 className="text-center text-xl font-bold tracking-wider">
+              <h4 className="text-md text-center font-bold tracking-wider lg:text-xl">
                 Lord of fallen
               </h4>
               <ul className="flex gap-x-1">
                 <li>
-                  <StartIcon width={16} height={16} />
+                  <StartIcon className="h-3 w-3 lg:h-4 lg:w-4" />
                 </li>
                 <li>
-                  <StartIcon width={16} height={16} />
+                  <StartIcon className="h-3 w-3 lg:h-4 lg:w-4" />
                 </li>
                 <li>
-                  <StartIcon width={16} height={16} />
+                  <StartIcon className="h-3 w-3 lg:h-4 lg:w-4" />
                 </li>
                 <li>
-                  <StartIcon width={16} height={16} />
+                  <StartIcon className="h-3 w-3 lg:h-4 lg:w-4" />
                 </li>
                 <li>
-                  <EmptyStartIcon width={16} height={16} />
+                  <EmptyStartIcon className="h-3 w-3 lg:h-4 lg:w-4" />
                 </li>
               </ul>
             </div>
@@ -70,7 +75,12 @@ const SubSlider = {
   ContentBottom: (props: ISubSliderProps) => {
     return (
       <Swiper
-        slidesPerView={4}
+        slidesPerView={2}
+        breakpoints={{
+          768: {
+            slidesPerView: 4,
+          },
+        }}
         spaceBetween={0}
         className="sub-slider"
         loop={true}
