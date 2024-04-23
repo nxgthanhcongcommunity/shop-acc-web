@@ -24,7 +24,7 @@ const MainSlider = (props: any) => {
       className="group"
     >
       <SwiperSlide>
-        <div className="relative h-[60vh]">
+        <div className="relative h-[85vh] lg:h-[60vh]">
           <div className="absolute h-full w-full bg-[#160962] opacity-40"></div>
           <img
             className="h-full object-cover lg:h-auto"
@@ -32,14 +32,12 @@ const MainSlider = (props: any) => {
             alt=""
           />
         </div>
-        <div className="absolute left-[10%] top-1/2 flex -translate-y-1/2 flex-col items-start">
-          <h1 className="text-2xl font-semibold tracking-wide lg:text-5xl">
+        <div className="absolute left-0 top-[60%] flex -translate-y-1/2 flex-col items-center lg:left-[10%] lg:top-1/2 lg:items-start">
+          <h1 className="text-center text-2xl font-semibold tracking-wide lg:text-5xl">
             KINGDOMS OF AMALUR: RECKHONG
           </h1>
           <div className="h-6"></div>
-          <Button.SM>
-            <span className="">Mua hàng</span>
-          </Button.SM>
+          <Button.SM>Mua hàng</Button.SM>
         </div>
       </SwiperSlide>
 

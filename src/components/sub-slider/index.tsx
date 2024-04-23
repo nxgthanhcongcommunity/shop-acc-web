@@ -102,11 +102,11 @@ const SubSlider = {
               </div>
             </div>
             <div className="flex flex-col items-center justify-center gap-y-3 py-6">
-              <h4 className="text-center text-xl font-bold tracking-wider">
+              <h4 className="text-md text-center font-bold tracking-wider lg:text-xl">
                 Nick đột kích
               </h4>
               <span className="block h-[1px] w-[60%] bg-slate-700"></span>
-              <p>Số tài khoản: 103</p>
+              <p className="text-xs">Số tài khoản: 103</p>
             </div>
           </SwiperSlide>
         ))}
