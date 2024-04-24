@@ -70,9 +70,9 @@ const Header = (props: any) => {
 
   return (
     <header
-      className={`fixed left-0 top-0 z-50 w-screen duration-150 ${isScrolled ? "h-[50px] bg-bodyBackground" : "h-[80px] bg-headerBackground"}`}
+      className={`fixed left-0 top-0 z-50 w-screen duration-150 ${isScrolled ? "h-[60px] bg-bodyBackground" : "lg:h-[120px] h-[100px] bg-[linear-gradient(180deg,#12082D_0%,#12082D00_100%)]"}`}
     >
-      <div className="mx-auto flex h-full items-center justify-between px-6 lg:max-w-[1170px] lg:px-0">
+      <div className="mx-auto flex h-full items-center justify-between lg:px-24 px-6">
         <div className="flex items-center gap-x-12">
           <Logo />
           <ul className="hidden gap-x-6 lg:flex ">

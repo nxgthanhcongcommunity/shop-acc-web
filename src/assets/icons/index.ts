@@ -13,5 +13,8 @@ export { ReactComponent as XmarkIcon } from "./xmark.svg";
 export { ReactComponent as MomoIcon } from "./momo_icon_square_pinkbg.svg";
 export { ReactComponent as CreditCardIcon } from "./credit-card.svg";
 export { ReactComponent as BarsIcon } from "./bars.svg";
+export { ReactComponent as FacebookIcon } from "./facebook-f.svg";
+export { ReactComponent as YoutubeIcon } from "./youtube.svg";
+export { ReactComponent as TelegramIcon } from "./telegram.svg";
 
 //xmark.svg
