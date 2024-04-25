@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/shop-acc-web/static/css/main.91bc9161.css",
-    "main.js": "/shop-acc-web/static/js/main.b956b13c.js",
+    "main.css": "/shop-acc-web/static/css/main.e781ab35.css",
+    "main.js": "/shop-acc-web/static/js/main.a0d8a591.js",
     "static/media/Lato-Light_3.ttf": "/shop-acc-web/static/media/Lato-Light_3.2a5730eb90a8be72bc93.ttf",
     "static/media/Lato-Regular_2.ttf": "/shop-acc-web/static/media/Lato-Regular_2.bb14dc80e8b5d860fe9c.ttf",
     "static/media/Lato-Heavy_1.ttf": "/shop-acc-web/static/media/Lato-Heavy_1.ba81e9fe23612fe14264.ttf",
@@ -27,11 +27,11 @@
     "static/media/caret-right.svg": "/shop-acc-web/static/media/caret-right.5f520d3b830b25cb1529f667daf245e1.svg",
     "static/media/caret-left.svg": "/shop-acc-web/static/media/caret-left.1ba200aa17a33d9887395b1d9e7daa0c.svg",
     "static/media/caret-down.svg": "/shop-acc-web/static/media/caret-down.6075c8ae8fc13d6413f38a1fe4986b70.svg",
-    "main.91bc9161.css.map": "/shop-acc-web/static/css/main.91bc9161.css.map",
-    "main.b956b13c.js.map": "/shop-acc-web/static/js/main.b956b13c.js.map"
+    "main.e781ab35.css.map": "/shop-acc-web/static/css/main.e781ab35.css.map",
+    "main.a0d8a591.js.map": "/shop-acc-web/static/js/main.a0d8a591.js.map"
   },
   "entrypoints": [
-    "static/css/main.91bc9161.css",
-    "static/js/main.b956b13c.js"
+    "static/css/main.e781ab35.css",
+    "static/js/main.a0d8a591.js"
   ]
 }
