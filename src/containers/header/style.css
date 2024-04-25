@@ -1,11 +1,11 @@
 .header {
-    @apply fixed left-0 top-0 z-50 w-screen duration-300 lg:h-[120px] h-[100px] bg-[linear-gradient(180deg,#12082D_0%,#12082D00_100%)]
+  @apply fixed left-0 top-0 z-50 h-[100px] w-screen bg-[linear-gradient(180deg,#12082D_0%,#12082D00_100%)] duration-300 lg:h-[120px];
 }
 
 .header.header--scrolled {
-    @apply h-[60px] bg-bodyBackground
+  @apply h-[60px] bg-[#12082d] lg:h-[80px];
 }
 
 .header__wrapper {
-    @apply mx-auto flex h-full items-center justify-between lg:px-24 px-6
+  @apply mx-auto flex h-full items-center justify-between px-6 lg:px-24;
 }
