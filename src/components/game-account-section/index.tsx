@@ -3,7 +3,7 @@ import GameAccountCard from "../account-card";
 const GameAccountSection = ({ title, cards }: any) => {
     return (
       <div className="container mx-auto pt-20 ">
-          <h2 className="text-3xl font-semibold text-center mb-6">{title}</h2>
+          <h1 className="my-12 text-5xl font-extrabold text-[#9536e8] text-center">{title}</h1>
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 justify-center items-center">
             {cards.map((card: any, index:any) => (
               <GameAccountCard key={index} {...card} />

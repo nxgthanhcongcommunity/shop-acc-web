@@ -1,0 +1,11 @@
+.header {
+    @apply fixed left-0 top-0 z-50 w-screen duration-300 lg:h-[120px] h-[100px] bg-[linear-gradient(180deg,#12082D_0%,#12082D00_100%)]
+}
+
+.header.header--scrolled {
+    @apply h-[60px] bg-bodyBackground
+}
+
+.header__wrapper {
+    @apply mx-auto flex h-full items-center justify-between lg:px-24 px-6
+}

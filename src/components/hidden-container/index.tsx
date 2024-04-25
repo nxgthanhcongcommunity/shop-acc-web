@@ -4,7 +4,7 @@ const HiddenContainer = ({ children, ...restProps }: any) => {
   const { side, show = false } = restProps;
 
   const defaultClasses =
-    "absolute bg-menuItemBackground before:absolute before:top-[-40px] before:h-12 before:w-1/2 after:absolute after:bottom-full after:border-8 after:border-b-menuItemBackground after:border-l-transparent after:border-r-transparent after:border-t-transparent grid w-max h-max duration-150";
+    "absolute bg-menuItemBackground before:absolute before:top-[-40px] before:h-12 before:w-1/2 after:absolute after:bottom-full after:border-8 after:border-b-menuItemBackground after:border-l-transparent after:border-r-transparent after:border-t-transparent grid w-max h-max duration-300";
 
   const classNamesConfig = {
     "top-[calc(100%+50px)] opacity-0 invisible": show === false,

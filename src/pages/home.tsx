@@ -42,7 +42,7 @@ const Home = (props: any) => {
         ]}
       />
       <LatestNew />
-      <BankCard />
+      {/* <BankCard /> */}
       <AboutMe />
     </div>
   );

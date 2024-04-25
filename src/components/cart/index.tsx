@@ -4,26 +4,15 @@ import HiddenContainer from "../hidden-container";
 import MenuCart from "./menu-cart";
 
 const Cart = () => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
+  const [isShow, setIsShow] = useState(false);
 
   return (
     <div
       className="group relative cursor-pointer"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onClick={() => setIsShow(prev => !prev)}
     >
-      <CartShoppingIcon width={14} height={14} />
-      <HiddenContainer show={isHovered} side="bottom-left">
-        <MenuCart />
-      </HiddenContainer>
+      <CartShoppingIcon width={20} height={20} />
+      <MenuCart isShow={isShow} />
     </div>
   );
 };

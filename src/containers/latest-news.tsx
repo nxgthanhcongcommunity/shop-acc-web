@@ -37,8 +37,8 @@ const LatestNew = () => {
 
 
     return (
-        <section className="mt-20">
-            <h1 className="my-10 text-5xl font-extrabold text-[#9536e8] text-center">Lastest news</h1>
+        <section className="my-28">
+            <h1 className="my-12 text-5xl font-extrabold text-[#9536e8] text-center">Lastest news</h1>
             <div className="lg:px-0 px-6">
                 <Swiper
                     initialSlide={2}
