@@ -1,13 +1,14 @@
 import { MainSlider, MobileNavbar } from "../components";
+import BankCard from "../components/bank-card";
 import GameAccountSection from "../components/game-account-section";
 import { Header } from "../containers";
 import AboutMe from "../containers/about-me";
-import BankCard from "../containers/bank-card";
+import LatestNew from "../containers/latest-news";
 
 const Home = (props: any) => {
   return (
     <div className="min-h-screen text-white bg-[url('https://imba.themerex.net/wp-content/uploads/2024/01/ingame-deco-main-back.png')] bg-fixed relative">
-      <div className="absolute z-[-1] top-[calc(100vh-50px)] right-0">
+      <div className="absolute z-[-1] top-[calc(100vh-50px)] right-0 ">
         <img src="https://imba.themerex.net/wp-content/uploads/2024/01/ingame-deco-img-1.png" alt="" />
       </div>
       <div className="absolute z-[-1] top-[200vh] -left-[40px]">
@@ -40,6 +41,7 @@ const Home = (props: any) => {
           // Add more card objects as needed
         ]}
       />
+      <LatestNew />
       <BankCard />
       <AboutMe />
     </div>

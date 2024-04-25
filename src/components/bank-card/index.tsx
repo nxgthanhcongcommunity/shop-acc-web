@@ -1,6 +1,6 @@
 
 import './bank-card.css'
-import chip from '../assets/images/chip.png'
+import chip from "../../assets/images/chip.png"
 
 const BankCard = () => {
     return (
