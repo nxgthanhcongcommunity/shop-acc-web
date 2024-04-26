@@ -1,2 +1,2 @@
 export { default as HomePage } from "./home";
-export { default as ProductListPage } from "./product-list";
+export { default as Shop } from "./shop";

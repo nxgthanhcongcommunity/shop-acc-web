@@ -16,5 +16,7 @@ export { ReactComponent as BarsIcon } from "./bars.svg";
 export { ReactComponent as FacebookIcon } from "./facebook-f.svg";
 export { ReactComponent as YoutubeIcon } from "./youtube.svg";
 export { ReactComponent as TelegramIcon } from "./telegram.svg";
+export { ReactComponent as HeartIcon } from "./heart.svg";
+export { ReactComponent as ArrowRightIcon } from "./arrow-right.svg";
 
 //xmark.svg
