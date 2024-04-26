@@ -9,8 +9,8 @@
   bg-[linear-gradient(180deg,#12082D_0%,#12082D00_100%)]
   duration-300
   lg:h-[120px]
-  border-b-[1px]
-  border-slate-600
+  /* border-b-[1px]
+  border-slate-600 */
 }
 
 .header.header--scrolled {

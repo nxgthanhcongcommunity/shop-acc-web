@@ -9,17 +9,27 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./App.css";
+import Product from "./pages/product";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
+    children: [
+
+    ],
   },
   {
-    path: "/shop",
+    path: "shop",
     element: <Shop />,
   },
-]);
+  {
+    path: "product",
+    element: <Product />,
+  },
+], {
+  basename: "/shop-acc-web"
+});
 
 function App() {
   return <RouterProvider router={router} />

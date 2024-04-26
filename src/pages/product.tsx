@@ -1,11 +1,10 @@
 import { MobileNavbar } from "../components";
-import BankCard from "../components/bank-card";
 import BreadCrumb from "../components/breadcrumb";
 import { Header } from "../containers";
 import AboutMe from "../containers/about-me";
-import ShopContainer from "../containers/shop-container";
+import ProductContainer from "../containers/product-container";
 
-const Shop = () => {
+const Product = () => {
   return (
     <div className="relative min-h-screen bg-[url('https://imba.themerex.net/wp-content/uploads/2024/01/ingame-deco-main-back.png')] bg-fixed text-white">
       <div className="absolute right-0 top-[calc(100vh-50px)] z-[-1] ">
@@ -23,11 +22,10 @@ const Shop = () => {
       <MobileNavbar />
       <Header />
       <BreadCrumb />
-      <ShopContainer />
-      <BankCard />
+      <ProductContainer />
       <AboutMe />
     </div>
   );
 };
 
-export default Shop;
+export default Product;

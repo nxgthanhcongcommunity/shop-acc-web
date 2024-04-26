@@ -33,3 +33,22 @@
 .hidden__content--show {
     @apply top-[calc(100%+20px)] opacity-100 visible
 }
+
+/* TITLE */
+.content__title {
+    @apply relative
+    block
+    after:absolute
+    after:left-0
+    after:top-[calc(100%+2px)]
+    after:h-[1px]
+    after:w-0
+    after:bg-slate-200
+    after:duration-300
+    duration-300
+    hover:after:w-full
+    hover:translate-x-[6px]
+    font-semibold
+    text-slate-300
+    hover:text-slate-100
+}

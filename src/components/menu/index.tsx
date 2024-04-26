@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { menuItems } from "../../constants";
 import { IMenuItemProps } from "../../types";
-import "./style.css";
 
 const MenuItemContent = (props: any) => {
     const { isShow, subMenuItems, ...restProps } = props;
