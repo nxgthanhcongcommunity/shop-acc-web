@@ -1,43 +1,38 @@
 .hidden__content {
-    @apply absolute 
+  @apply invisible 
+    absolute 
+    top-full 
+    grid 
+    h-max 
+    w-max 
     bg-[#1f1340] 
+    opacity-0 
+    duration-300 
     before:absolute 
     before:top-[-40px] 
     before:h-12 
-    before:w-1/2 
-    after:absolute 
-    after:hidden
-    after:bottom-full 
-    after:border-8 
-    after:border-b-menuItemBackground 
-    after:border-l-transparent 
-    after:border-r-transparent 
-    after:border-t-transparent 
-    grid 
-    w-max 
-    h-max 
-    duration-300 
-    top-full 
-    opacity-0 
-    invisible 
+    before:w-1/2;
 }
 
 .hidden__content--right {
-    @apply -left-4
+  @apply -left-4;
 }
 
 .hidden__content--left {
-    @apply -right-4
+  @apply -right-4;
 }
 
 .hidden__content--show {
-    @apply top-[calc(100%+20px)] opacity-100 visible
+  @apply visible top-[calc(100%+20px)] opacity-100;
 }
 
 /* TITLE */
 .content__title {
-    @apply relative
+  @apply relative
     block
+    font-semibold
+    text-slate-300
+    duration-300
     after:absolute
     after:left-0
     after:top-[calc(100%+2px)]
@@ -45,10 +40,7 @@
     after:w-0
     after:bg-slate-200
     after:duration-300
-    duration-300
-    hover:after:w-full
     hover:translate-x-[6px]
-    font-semibold
-    text-slate-300
     hover:text-slate-100
+    hover:after:w-full;
 }

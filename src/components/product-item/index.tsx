@@ -11,7 +11,7 @@ const ProductItem = () => {
     <div>
       <div className="relative">
         <img
-          src="https://imba.themerex.net/wp-content/uploads/2022/12/imba-prod-3-copyright-600x600.jpg"
+          src="https://assets-prd.ignimgs.com/2022/10/28/dragonballlegends-1666977025016.jpg"
           alt=""
         />
         <div className="absolute left-4 top-4">-8%</div>

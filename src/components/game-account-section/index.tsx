@@ -1,23 +1,27 @@
+import { Link } from "react-router-dom";
+import { ArrowRightIcon } from "../../assets/icons";
 import GameAccountCard from "../account-card";
 
 const GameAccountSection = ({ title, cards }: any) => {
-    return (
-      <div className="container mx-auto pt-20 ">
-          <h1 className="my-12 text-5xl font-extrabold text-[#9536e8] text-center">{title}</h1>
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 justify-center items-center">
-            {cards.map((card: any, index:any) => (
-              <GameAccountCard key={index} {...card} />
-            ))}
+  return (
+    <div className="container mx-auto pt-20 ">
+      <h1 className="my-12 text-center text-5xl font-extrabold text-[#9536e8]">
+        {title}
+      </h1>
+      <div className="grid grid-cols-1 items-center justify-center gap-4 lg:grid-cols-4">
+        {cards.map((card: any, index: any) => (
+          <GameAccountCard key={index} {...card} />
+        ))}
+      </div>
+      <div className="mt-6 text-center">
+        <Link to="shop">
+          <div className="text-title flex items-center justify-center gap-x-2 font-semibold hover:text-blue-500">
+            View More <ArrowRightIcon className="h-5 w-5" />
           </div>
-          <div className="text-center mt-6">
-            <a href="#" className="text-blue-500 hover:text-blue-700 font-semibold flex items-center justify-center">
-              View More <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10 0a1 1 0 01.946 1.324l-4 10a1 1 0 01-1.892-.648l4-10A1 1 0 0110 0zM1.5 12.5a1 1 0 011-1h15a1 1 0 110 2h-15a1 1 0 01-1-1z" clipRule="evenodd" />
-              </svg>
-            </a>
-          </div>
-        </div>
-    );
-  };
+        </Link>
+      </div>
+    </div>
+  );
+};
 
-  export default GameAccountSection
+export default GameAccountSection;

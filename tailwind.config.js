@@ -7,9 +7,9 @@ module.exports = {
         lato: ["Lato"],
       },
       colors: {
-        bodyBackground: "rgba(8, 3, 37, .9)",
-        headerBackground: "rgba(8,3,37,.4)",
-        menuItemBackground: "rgba(8, 3, 37, .8)",
+        primary: "#13082c",
+        secondary: "#2944a3",
+        title: "#9536e8",
       },
     },
   },

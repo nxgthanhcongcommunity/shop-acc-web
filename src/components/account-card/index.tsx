@@ -1,17 +1,20 @@
 import { Link } from "react-router-dom";
 
 const GameAccountCard = ({ imageSrc, title, subtitle, buttonText }: any) => {
-  const bg = '#0F0A3C';
   return (
-    <div className="rounded overflow-hidden shadow-lg m-4 bg-[#1e1041] hover:shadow-xl transition duration-300">
-      <img className="w-full object-cover" src={imageSrc} alt={title} />
+    <div className="bg-primary m-4 overflow-hidden rounded shadow-lg transition duration-300 hover:shadow-xl">
+      <img
+        className="h-[340px] w-full object-cover"
+        src={imageSrc}
+        alt={title}
+      />
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">{title}</div>
+        <div className="mb-2 text-xl font-bold">{title}</div>
         <p className="text-base">{subtitle}</p>
       </div>
-      <div className="px-6 py-4 flex justify-end">
+      <div className="flex justify-end px-6 py-4">
         <Link to="shop">
-          <button className="bg-[#1745a5] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <button className="bg-secondary rounded px-4 py-2 font-bold text-white hover:bg-blue-700">
             {buttonText}
           </button>
         </Link>
@@ -20,4 +23,4 @@ const GameAccountCard = ({ imageSrc, title, subtitle, buttonText }: any) => {
   );
 };
 
-export default GameAccountCard
+export default GameAccountCard;

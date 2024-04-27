@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { CartShoppingIcon } from "../../assets/icons";
-import HiddenContainer from "../hidden-container";
 import MenuCart from "./menu-cart";
 
 const Cart = () => {
@@ -9,7 +8,7 @@ const Cart = () => {
   return (
     <div
       className="group relative cursor-pointer"
-      onClick={() => setIsShow(prev => !prev)}
+      onClick={() => setIsShow((prev) => !prev)}
     >
       <CartShoppingIcon width={20} height={20} />
       <MenuCart isShow={isShow} />

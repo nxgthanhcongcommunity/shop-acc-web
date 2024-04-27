@@ -10,7 +10,7 @@ const MainSliderItem = () => {
         <div className="absolute z-10 h-full w-full bg-[#160962] opacity-30"></div>
         <img
           className="absolute h-full w-full object-cover"
-          src="https://r4.wallpaperflare.com/wallpaper/360/857/162/dragon-ball-super-son-goku-ultra-instict-mastered-ultra-instinct-wallpaper-68d63d381000dc48008c915e382204ca.jpg"
+          src="https://moewalls.com/wp-content/uploads/2023/10/goku-super-saiyan-rose-dragon-ball-thumb.jpg"
           alt=""
         />
         <div className="absolute bottom-[10%] left-6 z-20 lg:left-24">
