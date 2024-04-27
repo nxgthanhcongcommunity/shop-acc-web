@@ -21,7 +21,7 @@ const Product = () => {
       </div>
       <MobileNavbar />
       <Header />
-      <BreadCrumb />
+      <div className="h-[10vh]"></div>
       <ProductContainer />
       <AboutMe />
     </div>

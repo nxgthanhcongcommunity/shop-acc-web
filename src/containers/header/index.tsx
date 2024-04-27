@@ -6,18 +6,17 @@ import { useScroll } from "../../hooks";
 import "./style.css";
 
 const Header = () => {
-  
   const isScrolled = useScroll();
 
   return (
-    <header
-      className={`header ${(isScrolled && "header--scrolled")}`}
-    >
+    <header className={`header ${isScrolled && "header--scrolled"}`}>
       <div className="header__wrapper">
         <Logo />
         <Menu />
-        <UserMenu />
-        <MenuToggle />
+        <div className="flex">
+          <UserMenu />
+          <MenuToggle />
+        </div>
       </div>
     </header>
   );
