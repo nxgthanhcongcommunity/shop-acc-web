@@ -17,16 +17,16 @@ const AboutMe = () => {
             </li>
           </ul>
           <div className="hidden text-5xl font-bold lg:block">
-            <p>Let’s play together</p>
+            <p>Hãy kết nối với nhau</p>
             <div className="flex">
-              <p>just write to me</p>
+              <p>email của tôi</p>
               <span>&nbsp;-&nbsp;</span>
               <p className="text-[#dd53f5]">info@xmpl.com</p>
             </div>
           </div>
           <div className="text-2xl font-bold lg:hidden">
-            <p>Let’s play together</p>
-            <p>just write to me: </p>
+            <p>Hãy kết nối với nhau</p>
+            <p>email của tôi: </p>
             <p className="mt-4 text-[#dd53f5]">info@xmpl.com</p>
           </div>
         </div>

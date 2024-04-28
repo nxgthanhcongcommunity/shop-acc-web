@@ -38,16 +38,16 @@ const LatestNew = () => {
 
     return (
         <section className="my-28">
-            <h1 className="my-12 text-5xl font-extrabold text-[#9536e8] text-center">Lastest news</h1>
+            <h1 className="my-12 text-5xl font-extrabold text-title text-center">Tin tức mới nhất</h1>
             <div className="lg:px-0 px-6">
                 <Swiper
                     initialSlide={2}
                     slidesPerView={1}
                     breakpoints={{
                         768: {
-                          slidesPerView: 4,
+                            slidesPerView: 4,
                         },
-                      }}
+                    }}
                     loop={true}
                     centeredSlides={true}
                     slot="container-start"

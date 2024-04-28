@@ -10,12 +10,16 @@ const ProductItem = () => {
   return (
     <div>
       <div className="relative">
-        <img
-          src="https://assets-prd.ignimgs.com/2022/10/28/dragonballlegends-1666977025016.jpg"
-          alt=""
-        />
+        <div className="relative">
+          <div className="absolute z-10 h-full w-full bg-[#160962] opacity-20"></div>
+          <img
+            src="https://assets-prd.ignimgs.com/2022/10/28/dragonballlegends-1666977025016.jpg"
+            alt=""
+          />
+        </div>
+
         <div className="absolute left-4 top-4">-8%</div>
-        <ul className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2">
+        <ul className="absolute z-20 left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2">
           <li>
             <HeartIcon className="h-12 w-12" />
           </li>
