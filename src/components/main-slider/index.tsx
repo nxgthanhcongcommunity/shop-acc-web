@@ -34,10 +34,10 @@ const MainSlider = (props: any) => {
       spaceBetween={30}
       centeredSlides={true}
       loop={true}
-      // autoplay={{
-      //   delay: 10000,
-      //   disableOnInteraction: false,
-      // }}
+      autoplay={{
+        delay: 4000,
+        disableOnInteraction: false,
+      }}
       pagination={{
         clickable: true,
         bulletClass: "c-swiper-pagination-bullet",

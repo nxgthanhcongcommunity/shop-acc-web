@@ -30,7 +30,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <BankCard />
+        {/* <BankCard /> */}
         <p className="col-span-2 mt-16 border-t border-t-slate-500 py-8 font-medium text-[rgb(186,175,220)]">
           ThemeREX © 2024. All Rights Reserved. Developer: nxgthanhcong
         </p>

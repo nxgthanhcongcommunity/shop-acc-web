@@ -3,6 +3,7 @@ import GameAccountSection from "../components/game-account-section";
 import { gameSections } from "../constants";
 import { Header } from "../containers";
 import AboutMe from "../containers/about-me";
+import Footer from "../containers/footer";
 import LatestNew from "../containers/latest-news";
 
 // bg-[url('https://imba.themerex.net/wp-content/uploads/2024/01/ingame-deco-main-back.png')] 
@@ -17,7 +18,7 @@ const Home = (props: any) => {
       bg-fixed
       text-white"
     >
-      <div className="absolute right-0 top-[calc(100vh-50px)] z-[-1] ">
+      {/* <div className="absolute right-0 top-[calc(100vh-50px)] z-[-1] ">
         <img
           src="https://imba.themerex.net/wp-content/uploads/2024/01/ingame-deco-img-1.png"
           alt=""
@@ -28,7 +29,7 @@ const Home = (props: any) => {
           src="https://imba.themerex.net/wp-content/uploads/2024/01/ingame-deco-img-2.png"
           alt=""
         />
-      </div>
+      </div> */}
       <MobileNavbar />
       <Header />
       <MainSlider />
@@ -38,7 +39,8 @@ const Home = (props: any) => {
         ))
       }
       <LatestNew />
-      <AboutMe />
+      {/* <AboutMe /> */}
+      <Footer />
     </div>
   );
 };
