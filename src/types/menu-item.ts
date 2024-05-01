@@ -1,10 +1,8 @@
 export interface IMenuItemProps {
-  title: string;
+  title: string | JSX.Element;
   subTitle?: string;
   subMenuItems?: ISubMenuItem[];
-
-  caret?: boolean;
-  column?: number;
+  side?: "left" | "right";
 }
 
 export interface ISubMenuItem {

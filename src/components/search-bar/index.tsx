@@ -17,7 +17,7 @@ const SearchBar = () => {
       >
         <div className="flex w-full flex-col items-end justify-stretch">
           <XmarkIcon
-            className="h-8 w-8 cursor-pointer"
+            className="h-5 w-5 cursor-pointer lg:h-8 lg:w-8"
             onClick={() => setIsShowSearchBox(false)}
           />
           <div className="relative w-full">

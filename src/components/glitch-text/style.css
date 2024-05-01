@@ -21,6 +21,7 @@
   content: attr(title);
   position: absolute;
   left: 0;
+  top: 0;
 }
 
 .glitch-text:before {

@@ -10,10 +10,10 @@ const GameAccountSection = ({ data, ...restProps }: any) => {
   const { title, cards, isSeeMore } = data;
   return (
     <div className="container mx-auto pt-20 ">
-      <div className="text-center">
+      <div className="px-6 text-center">
         <GlitchText
           text={title}
-          className="my-12 inline-block text-center text-2xl font-extrabold text-[#9536e8] lg:text-5xl"
+          className="my-12 inline-block text-center text-4xl font-extrabold text-[#9536e8] lg:text-5xl"
         />
       </div>
       <Swiper
