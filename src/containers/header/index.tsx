@@ -1,6 +1,5 @@
 import Logo from "../../components/logo";
 import Menu from "../../components/menu";
-import MenuToggle from "../../components/menu-toggle";
 import UserMenu from "../../components/user-menu";
 import { useScroll } from "../../hooks";
 import "./style.css";
@@ -11,12 +10,11 @@ const Header = () => {
   return (
     <header className={`header ${isScrolled && "header--scrolled"}`}>
       <div className="header__wrapper">
-        <Logo />
-        <Menu />
-        <div className="flex">
-          <UserMenu />
-          <MenuToggle />
+        <div className="flex items-center gap-x-20">
+          <Logo />
+          <Menu />
         </div>
+        <UserMenu />
       </div>
     </header>
   );

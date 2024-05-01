@@ -1,16 +1,14 @@
 .header {
-  @apply
+  @apply /*
+  */
+  z-header
   fixed
   left-0
   top-0
-  z-50
   h-[100px]
   w-screen
   bg-[linear-gradient(180deg,#12082D_0%,#12082D00_100%)]
-  duration-300
-  lg:h-[120px]
-  /* border-b-[1px]
-  border-slate-600 */
+  duration-300 lg:h-[120px];
 }
 
 .header.header--scrolled {

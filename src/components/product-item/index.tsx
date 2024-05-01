@@ -6,7 +6,6 @@ import {
 } from "../../assets/icons";
 
 const ProductItem = () => {
-  const icons = [HeartIcon, CartShoppingIcon, ArrowRightIcon];
   return (
     <div>
       <div className="relative">
@@ -19,7 +18,7 @@ const ProductItem = () => {
         </div>
 
         <div className="absolute left-4 top-4">-8%</div>
-        <ul className="absolute z-20 left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2">
+        <ul className="absolute left-1/2 top-1/2 z-20 flex -translate-x-1/2 -translate-y-1/2">
           <li>
             <HeartIcon className="h-12 w-12" />
           </li>
