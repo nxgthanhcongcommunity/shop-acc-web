@@ -42,18 +42,18 @@ export const mainSliderItems = [
       "Đồng hành cùng niềm đam mê - Trang web bán tài khoản chất lượng hàng đầu!",
     // shortWords: "Cung cấp",
   },
-  {
-    id: 2,
-    src: "https://images7.alphacoders.com/114/1143254.jpg",
-    slogan: "Khám phá thế giới mới - Mua tài khoản game ngay hôm nay!",
-    // shortWords: "Trải nghiệm",
-  },
-  {
-    id: 3,
-    src: "https://images8.alphacoders.com/134/thumb-1920-1343329.png",
-    slogan: "Chinh phục mọi thách thức - Tìm kiếm tài khoản ưng ý tại đây!",
-    // shortWords: "Chất lượng",
-  },
+  // {
+  //   id: 2,
+  //   src: "https://images7.alphacoders.com/114/1143254.jpg",
+  //   slogan: "Khám phá thế giới mới - Mua tài khoản game ngay hôm nay!",
+  //   // shortWords: "Trải nghiệm",
+  // },
+  // {
+  //   id: 3,
+  //   src: "https://images8.alphacoders.com/134/thumb-1920-1343329.png",
+  //   slogan: "Chinh phục mọi thách thức - Tìm kiếm tài khoản ưng ý tại đây!",
+  //   // shortWords: "Chất lượng",
+  // },
 ];
 
 export const gameSections = [

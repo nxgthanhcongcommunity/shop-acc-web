@@ -90,33 +90,6 @@ const MenuCart = {
   },
 }
 
-/*
-
-const Cart = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  const handleMouseEnter = () => {
-    setIsVisible(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsVisible(false);
-  };
-
-  return (
-    <div
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      className="group relative cursor-pointer"
-    >
-      <CartShoppingIcon width={20} height={20} />
-      <MenuCart isShow={isVisible} />
-    </div>
-  );
-};
-
-*/
-
 const Cart = {
   PC: () => {
     const [isVisible, setIsVisible] = useState(false);

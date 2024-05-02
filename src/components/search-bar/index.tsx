@@ -26,7 +26,10 @@ const SearchBar = {
           height={20}
         />
         <div
-          className={`${isVisible ? "top-[calc(100%+10px)] opacity-100 visible" : "top-full opacity-0 invisible"} z-searchBar absolute right-[-10px] w-[60vw] bg-hidden p-6 duration-500 lg:p-20`}
+          className={`${isVisible ? "top-[calc(100%+10px)] opacity-100 visible" : "top-full opacity-0 invisible"} z-searchBar absolute right-[-10px] w-[60vw] bg-hidden p-6 duration-500 lg:p-20
+          
+          before:absolute before:right-0 before:top-[-10px] before:w-[10%] before:h-[20px] 
+          `}
         >
           <div className="relative w-full">
             <input

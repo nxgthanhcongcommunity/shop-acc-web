@@ -29,7 +29,7 @@ const MenuItem = (props: IMenuItemProps) => {
   };
 
   const handleMouseLeave = () => {
-    setIsHovered(false);
+    setIsHovered(true);
   };
 
   return (

@@ -5,15 +5,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "./style.css";
 import GlitchText from "../glitch-text";
+import NeonText from "../neon-text";
 
 const GameAccountSection = ({ data, ...restProps }: any) => {
   const { title, cards, isSeeMore } = data;
   return (
     <div className="container mx-auto pt-20 ">
       <div className="px-6 text-center">
-        <GlitchText
+        {/* <GlitchText
           text={title}
           className="my-12 inline-block text-center text-4xl font-extrabold text-[#9536e8] lg:text-5xl"
+        /> */}
+        <NeonText text={title}
+          className="my-12 inline-block text-center text-4xl font-extrabold lg:text-5xl"
         />
       </div>
       <Swiper
