@@ -5,6 +5,8 @@ import { RootState } from "../../stores";
 import Cart from "../cart";
 import MobileMenuItem from "../mobile-menu-item";
 import SearchBar from "../search-bar";
+import { Link } from "react-router-dom";
+import NeonText from "../neon-text";
 
 const MobileNavbar = (props: any) => {
   const { activedMobileNav } = useSelector((state: RootState) => state.app);
@@ -20,6 +22,13 @@ const MobileNavbar = (props: any) => {
                 <MobileMenuItem {...item} />
               </li>
             ))}
+            <li>
+              <Link to="/">
+                <NeonText text="Nạp thẻ"
+                  className="inline-block text-center text-2xl font-extrabold"
+                />
+              </Link>
+            </li>
           </ul>
           <ul className="mt-8 flex flex-col items-strecth gap-y-4">
             <li>

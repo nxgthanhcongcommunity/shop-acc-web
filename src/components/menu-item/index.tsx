@@ -29,19 +29,16 @@ const MenuItem = (props: IMenuItemProps) => {
   };
 
   const handleMouseLeave = () => {
-    setIsHovered(true);
+    setIsHovered(false);
   };
 
   return (
     <div
-      className="group relative flex cursor-pointer flex-col"
+      className="group relative flex cursor-pointer flex-col after:absolute after:top-full after:right-0 after:w-[100%] after:h-8 after:bg-transparent"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <h4 className="text-sm font-semibold uppercase">{title}</h4>
-      {/* <span className="text-xs leading-[10px] text-white/70">
-                  {subTitle}
-              </span> */}
       <MenuItemContent
         isShow={isHovered}
         subMenuItems={subMenuItems}

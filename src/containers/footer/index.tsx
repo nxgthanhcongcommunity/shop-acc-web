@@ -32,10 +32,10 @@ const Footer = () => {
             <h3 className="text-xl font-bold">Liên hệ với chúng tôi</h3>
             <div className="text-hightLight mt-6 grid gap-y-4 font-medium">
               <ul className="flex gap-x-1">
-                <li className="text-md flex h-12 w-12 items-center justify-center rounded-md border border-slate-800 bg-[#12082d] text-slate-400">
+                <li className="text-md flex h-12 w-12 items-center justify-center rounded-md border border-slate-800 cursor-pointer">
                   <FacebookIcon className="h-4 w-4" />
                 </li>
-                <li className="text-md flex h-12 w-12 items-center justify-center rounded-md border border-slate-800 bg-[#12082d] text-slate-400">
+                <li className="text-md flex h-12 w-12 items-center justify-center rounded-md border border-slate-800 cursor-pointer">
                   <TelegramIcon className="h-4 w-4" />
                 </li>
               </ul>

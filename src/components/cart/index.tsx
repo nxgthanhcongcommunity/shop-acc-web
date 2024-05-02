@@ -48,11 +48,6 @@ const MenuCart = {
   Mobile: (props: any) => {
     const { isShow } = props;
     return (
-      // <div
-      //   className={`hidden__content hidden__content--left ${isShow && "hidden__content--show"}`}
-      // >
-
-      // </div>
       <div className={`py-8 ${isShow ? "block" : "hidden"}`}>
         <ul className="grid max-h-[150px] gap-y-5 overflow-y-scroll">
           {[1, 2, 6].map((item, index) => (
@@ -106,7 +101,7 @@ const Cart = {
       <div
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="group relative cursor-pointer"
+        className="group relative cursor-pointer after:absolute after:top-full after:right-0 after:w-[150%] after:h-8 after:bg-transparent"
       >
         <CartShoppingIcon width={20} height={20} />
         <MenuCart.PC isShow={isVisible} />

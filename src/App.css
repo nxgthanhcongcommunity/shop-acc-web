@@ -1,13 +1,13 @@
 .hidden__content {
-  @apply invisible absolute top-full grid h-max w-max bg-hidden opacity-0 duration-300 before:bg-[#fff];
+  @apply invisible absolute top-full grid h-max w-max bg-hidden opacity-0 duration-300;
 }
 
 .hidden__content--right {
-  @apply -left-4 before:absolute before:top-[-40px] before:h-16 before:w-[80px];
+  @apply -left-4;
 }
 
 .hidden__content--left {
-  @apply -right-4 before:absolute before:top-[-40px] before:h-16 before:w-[80px] before:right-0;
+  @apply -right-4;
 }
 
 .hidden__content--show {

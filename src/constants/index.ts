@@ -29,9 +29,6 @@ export const menuItems: IMenuItemProps[] = [
       },
     ],
   },
-  {
-    title: "Nạp thẻ",
-  },
 ];
 
 export const mainSliderItems = [
