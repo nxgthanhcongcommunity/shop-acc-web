@@ -20,9 +20,9 @@ const MobileMenuItem = (props: any) => {
             </span>
           )}
         </div>
-        <span className="text-[10px] leading-[10px] text-white/50">
+        {/* <span className="text-[10px] leading-[10px] text-white/50">
           {subTitle}
-        </span>
+        </span> */}
         <ul
           className={`${columnClass} w-max py-2 ${isVisible ? "grid" : "hidden"}`}
         >

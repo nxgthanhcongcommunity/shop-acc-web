@@ -188,25 +188,7 @@ export const gameSections = [
         subtitle: "Tài khoản hiện có: 100",
         buttonText: "Text mạc định",
       },
-      {
-        imageSrc:
-          "https://media.karousell.com/media/photos/products/2022/9/14/dragon_ball_legends_account_fo_1663138547_7eea8f67_progressive.jpg",
-        title: "Hộp quà",
-        subtitle: "Tài khoản hiện có: 100",
-        buttonText: "Text mạc định",
-      },
-      {
-        imageSrc: "https://i.ebayimg.com/images/g/ExIAAOSw2bllNuIO/s-l1600.jpg",
-        title: "Tri ân",
-        subtitle: "Tài khoản hiện có: 100",
-        buttonText: "Text mạc định",
-      },
-      {
-        imageSrc: "https://i.ebayimg.com/images/g/ExIAAOSw2bllNuIO/s-l1600.jpg",
-        title: "Tri ân",
-        subtitle: "Tài khoản hiện có: 100",
-        buttonText: "Text mạc định",
-      },
+
     ],
   },
 ];

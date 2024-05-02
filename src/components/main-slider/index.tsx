@@ -45,6 +45,7 @@ const MainSlider = (props: any) => {
       }}
       modules={[Autoplay, Pagination, Navigation]}
       className="group"
+      parallax={true}
     >
       {mainSliderItems.map((item) => (
         <SwiperSlide key={item.id}>

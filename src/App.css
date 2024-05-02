@@ -1,17 +1,5 @@
 .hidden__content {
-  @apply invisible 
-    absolute 
-    top-full 
-    grid 
-    h-max 
-    w-max 
-    bg-[#1f1340] 
-    opacity-0 
-    duration-300 
-    before:absolute 
-    before:top-[-40px] 
-    before:h-12 
-    before:w-1/2;
+  @apply invisible absolute top-full grid h-max w-max bg-hidden opacity-0 duration-300 before:absolute before:top-[-40px] before:h-12 before:w-1/2;
 }
 
 .hidden__content--right {
@@ -28,19 +16,5 @@
 
 /* TITLE */
 .content__title {
-  @apply relative
-    block
-    font-semibold
-    text-slate-300
-    duration-300
-    after:absolute
-    after:left-0
-    after:top-[calc(100%+2px)]
-    after:h-[1px]
-    after:w-0
-    after:bg-slate-200
-    after:duration-300
-    hover:translate-x-[6px]
-    hover:text-slate-100
-    hover:after:w-full;
+  @apply relative block font-semibold text-slate-300 duration-300 after:absolute after:left-0 after:top-[calc(100%+2px)] after:h-[1px] after:w-0 after:bg-slate-200 after:duration-300 hover:translate-x-[6px] hover:text-slate-100 hover:after:w-full;
 }

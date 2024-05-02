@@ -1,16 +1,18 @@
-import { UserIcon } from "../../assets/icons";
+import { useState } from "react";
+import { MagnifyingGlassIcon, UserIcon } from "../../assets/icons";
 import Cart from "../cart";
 import MenuItem from "../menu-item";
+import OutsideClickHandler from 'react-outside-click-handler';
 import SearchBar from "../search-bar";
 
 const UserMenu = () => {
   return (
     <ul className="hidden items-center gap-x-4 lg:flex lg:gap-x-6">
       <li>
-        <SearchBar />
+        <SearchBar.PC />
       </li>
       <li>
-        <Cart />
+        <Cart.PC />
       </li>
       <li>
         <MenuItem
