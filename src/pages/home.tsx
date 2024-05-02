@@ -1,7 +1,6 @@
 import { MainSlider, MobileNavbar } from "../components";
 import GameAccountSection from "../components/game-account-section";
 import MenuToggle from "../components/menu-toggle";
-import Slider from "../components/slider";
 import { gameSections } from "../constants";
 import { Header } from "../containers";
 import Footer from "../containers/footer";
@@ -18,7 +17,6 @@ const Home = (props: any) => {
       <MenuToggle />
       <Header />
       <MainSlider />
-      <Slider />
       {gameSections.map((item) => (
         <GameAccountSection data={item} />
       ))}

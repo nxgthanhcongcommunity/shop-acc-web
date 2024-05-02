@@ -16,7 +16,6 @@ const MenuCart = {
                   src="https://html.nkdev.info/youplay/assets/images/dark/game-bloodborne-500x375.jpg"
                   alt=""
                   width={100}
-                  className="-skew-x-6"
                 />
                 <div className="justfy-center flex min-w-[250px] grow flex-col items-start px-6">
                   <h5 className="text-sm font-bold">Bloodborne</h5>

@@ -10,6 +10,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./App.css";
 import Product from "./pages/product";
+import Signup from "./pages/signup";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
     children: [
 
     ],
+  },
+  {
+    path: "signup",
+    element: <Signup />,
   },
   {
     path: "shop",
