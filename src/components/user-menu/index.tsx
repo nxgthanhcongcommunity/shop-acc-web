@@ -2,7 +2,7 @@ import { useState } from "react";
 import { MagnifyingGlassIcon, UserIcon } from "../../assets/icons";
 import Cart from "../cart";
 import MenuItem from "../menu-item";
-import OutsideClickHandler from 'react-outside-click-handler';
+import OutsideClickHandler from "react-outside-click-handler";
 import SearchBar from "../search-bar";
 
 const UserMenu = () => {
@@ -23,6 +23,9 @@ const UserMenu = () => {
           ]}
           side="left"
         />
+        {/* <button className="h-[46px] grow rounded-xl bg-[#1745a5] px-9 font-bold text-white hover:bg-blue-700">
+          Đăng kí/Đăng nhập
+        </button> */}
       </li>
     </ul>
   );
