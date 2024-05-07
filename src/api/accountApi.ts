@@ -1,8 +1,8 @@
-import axios from "axios"
+import axiosInstance from "./axiosInstance"
 
 const accountApi = {
     async loginWithGoogle(data: any) {
-        const response = await axios({
+        const response = await axiosInstance({
             method: "POST",
             url: "auth/google",
             data: { ...data },

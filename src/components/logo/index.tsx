@@ -3,8 +3,8 @@ import { useHomePageQuery } from "../../stores/services/master-data-api";
 
 const Logo = () => {
 
-  const { isLoading, isUninitialized, isError, data } = useHomePageQuery();
-  const { shopName } = data || {};
+  // const { isLoading, isUninitialized, isError, data } = useHomePageQuery();
+  // const { shopName } = data || {};
 
   return (
     <Link to="/">
@@ -15,7 +15,7 @@ const Logo = () => {
           className="h-12 w-12 lg:h-16 lg:w-16"
           alt=""
         />
-        <h1 className="text-2xl font-medium">{shopName}</h1>
+        <h1 className="text-2xl font-medium">LH</h1>
       </div>
     </Link>
   );

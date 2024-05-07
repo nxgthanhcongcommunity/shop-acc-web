@@ -1,5 +1,5 @@
 import axios from "axios";
-import "dot-env";
+// import "dot-env";
 
 const { REACT_APP_API_URL, REACT_APP_API_VER } = process.env
 
