@@ -1,6 +1,5 @@
-import Logo from "../../components/logo";
-import Menu from "../../components/menu";
-import UserMenu from "../../components/user-menu";
+
+import { Logo, Menu, UserMenu } from "../../components";
 import { useScroll } from "../../hooks";
 import "./style.css";
 

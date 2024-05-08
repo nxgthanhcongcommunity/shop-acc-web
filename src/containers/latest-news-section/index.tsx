@@ -1,6 +1,4 @@
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const getRandomArbitrary = (min: any, max: any) => {
     return Math.ceil(Math.random() * (max - min) + min);

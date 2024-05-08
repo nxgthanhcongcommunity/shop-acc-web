@@ -1,6 +1,7 @@
 import axiosInstance from "./axiosInstance"
 
 const accountApi = {
+
     async loginWithGoogle(data: any) {
         const response = await axiosInstance({
             method: "POST",

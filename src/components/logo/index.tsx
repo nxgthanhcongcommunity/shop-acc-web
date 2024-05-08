@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
-import { useHomePageQuery } from "../../stores/services/master-data-api";
 
 const Logo = () => {
-
-  // const { isLoading, isUninitialized, isError, data } = useHomePageQuery();
-  // const { shopName } = data || {};
 
   return (
     <Link to="/">

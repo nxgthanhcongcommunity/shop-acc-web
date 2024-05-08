@@ -3,7 +3,7 @@ import ProductItem from "../../components/product-item";
 import ResponsivePagination from 'react-responsive-pagination';
 import 'react-responsive-pagination/themes/classic.css';
 import './paging.css';
-import ShopPanel from "../../components/shop-panel";
+import { ShopPanelContainer } from "..";
 
 const ShopContainer = () => {
 
@@ -41,7 +41,7 @@ const ShopContainer = () => {
                     </div>
                 </div>
                 <div className="col-span-2 lg:col-span-1">
-                    <ShopPanel />
+                    <ShopPanelContainer />
                 </div>
             </div>
         </div>

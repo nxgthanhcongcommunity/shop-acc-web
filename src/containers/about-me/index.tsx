@@ -1,4 +1,4 @@
-import { FacebookIcon, TelegramIcon, YoutubeIcon } from "../assets/icons";
+import { FacebookIcon, TelegramIcon, YoutubeIcon } from "../../assets/icons";
 
 const AboutMe = () => {
   return (

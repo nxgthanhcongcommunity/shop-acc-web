@@ -1,18 +1,21 @@
 import { useState } from "react";
 import { IMenuItemProps } from "../../types";
+import { Link } from "react-router-dom";
 
 const MenuItemContent = (props: any) => {
-  const { isShow, subMenuItems, side, ...restProps } = props;
+  const { isShow, subMenuItems, side, } = props;
 
   return (
     <div
-      className={`hidden__content ${side == "left" ? "hidden__content--left" : "hidden__content--right"} ${isShow && "hidden__content--show"}`}
+      className={`hidden__content ${side === "left" ? "hidden__content--left" : "hidden__content--right"} ${isShow && "hidden__content--show"}`}
     >
       <ul className="grid py-2">
         {subMenuItems &&
           subMenuItems.map(({ title, href }: any, index: number) => (
             <li className="flex h-12 w-[225px] items-center px-8" key={index}>
-              <span className="content__title">{title}</span>
+              <Link to={"/signup"}>
+                <span className="content__title">{title}</span>
+              </Link>
             </li>
           ))}
       </ul>
@@ -21,7 +24,7 @@ const MenuItemContent = (props: any) => {
 };
 
 const MenuItem = (props: IMenuItemProps) => {
-  const { title, side, subTitle, subMenuItems } = props;
+  const { title, side, subMenuItems } = props;
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
