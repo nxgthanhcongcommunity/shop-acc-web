@@ -1,6 +1,6 @@
 const UserMenu = () => {
     return (
-        <span>new component add < /span>
+        <span>new component add </span>
     )
 }
 

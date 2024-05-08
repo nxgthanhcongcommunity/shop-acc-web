@@ -1,4 +1,4 @@
-import { HomePage, ShopPage } from "./pages";
+import { HomePage, ProductPage, ShopPage, SignupPage } from "./pages";
 
 import {
   createBrowserRouter,
@@ -10,8 +10,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./App.css";
 import Layout from "./containers/layout";
-import Product from "./pages/product";
-import Signup from "./pages/signup";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +19,7 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       {
         path: "signup",
-        element: <Signup />,
+        element: <SignupPage />,
       },
       {
         path: "shop",
@@ -29,7 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: "product",
-        element: <Product />,
+        element: <ProductPage />,
       },
       // {
       //   path: "/courses",
