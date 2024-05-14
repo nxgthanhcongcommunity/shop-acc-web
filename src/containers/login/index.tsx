@@ -6,9 +6,12 @@ const SignupForm = () => {
 
     const login = useGoogleLogin({
         onSuccess: async (credential) => {
-            const response = await accountApi.loginWithGoogle(credential)
 
-            console.log(response);
+            console.log(credential);
+
+            const response = await accountApi.LoginWithGoogle(credential)
+
+            // console.log(response);
         },
     });
 
