@@ -3,13 +3,20 @@ import { AccountCard, NeonText } from "../../components";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
 import { ArrowRightIcon } from "../../assets/icons";
+import { useGetCategoriesByBannerCodeQuery } from "../../stores/services/master-data-api";
 
-const GameSection = ({ data, ...restProps }: any) => {
-    const { title, cards, isSeeMore } = data;
+const GameSection = ({ banner, ...restProps }: any) => {
+
+    const { code, name } = banner;
+    const isSeeMore = true;
+
+    const { data: categories, error, isLoading } = useGetCategoriesByBannerCodeQuery(code);
+    if (isLoading) return <span>loading..</span>
+
     return (
         <div className="container mx-auto pt-20 ">
             <div className="px-6 text-center">
-                <NeonText text={title}
+                <NeonText text={name}
                     className="my-12 inline-block text-center text-4xl font-extrabold lg:text-5xl"
                 />
             </div>
@@ -31,11 +38,13 @@ const GameSection = ({ data, ...restProps }: any) => {
                 modules={[Autoplay, Pagination]}
                 className="w-full"
             >
-                {cards.map((card: any, index: any) => (
-                    <SwiperSlide>
-                        <AccountCard key={index} {...card} />
-                    </SwiperSlide>
-                ))}
+                {
+                    categories.map((category: any) => (
+                        <SwiperSlide>
+                            <AccountCard key={category.id} category={category} />
+                        </SwiperSlide>
+                    ))
+                }
             </Swiper>
             {isSeeMore && (
                 <div className="mt-12 text-right">

@@ -1,8 +1,8 @@
 import { fetchBaseQuery, retry } from "@reduxjs/toolkit/query";
-const apiUrl = process.env.REACT_APP_API_URL;
+const { REACT_APP_API_URL } = process.env;
 
 const staggeredBaseQuery = retry(
-    fetchBaseQuery({ baseUrl: `${apiUrl}/api/v1/` }),
+    fetchBaseQuery({ baseUrl: `${REACT_APP_API_URL}/api/v1/` }),
     {
         maxRetries: 5,
     }

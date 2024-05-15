@@ -1,7 +1,25 @@
 const UserMenu = () => {
     return (
-        <span>new component add </span>
+        <span>new component add < /span>
     )
 }
 
 export default UserMenu;
+
+/*
+
+const a = {
+    
+    logoFileUrl: null,
+    shopName: null,
+    mainSliderItems: [
+        {
+            title: null,
+            imgUrl: null,
+        }
+    ]
+
+
+}
+
+*/
