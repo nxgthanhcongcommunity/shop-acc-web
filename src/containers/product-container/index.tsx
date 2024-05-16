@@ -1,44 +1,40 @@
 import { CartShoppingIcon, HeartIcon } from "../../assets/icons";
 import ProductItem from "../../components/product-item";
-import Slider from "./slider";
+import { useQuery } from "../../hooks";
+import { useGetProductByCodeQuery } from "../../stores/services/master-data-api";
+import ProductSlider from "./product-slider";
+const { REACT_APP_API_URL } = process.env;
 
 const ProductContainer = () => {
+
+  const query = useQuery();
+  const productCode: any = ("" + query.get("code"));
+
+  const {
+    data: product,
+    isLoading
+  } = useGetProductByCodeQuery(productCode);
+  if (isLoading || product == null) { return <p>loading...</p> }
+
+
+  console.log(product)
+
   return (
     <div className="mx-auto my-16 max-w-[1290px] lg:my-28">
       <div className="grid gap-x-12 px-6 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <div>
-            <Slider />
+            <ProductSlider childsFilesUrl={product.childsFilesUrl} />
           </div>
         </div>
         <div className="mt-10 lg:col-span-5 lg:mt-0">
           <h1 className="text-3xl font-bold lg:text-4xl">
-            Sovereign spirit t-shirt
+            {product.name}
           </h1>
-          <p className="my-4 text-2xl font-semibold">$19.00 – $25.00</p>
+          <p className="my-4 text-2xl font-semibold">{product.price || "10.000 vnđ"}</p>
           <p className="my-8 text-lg font-medium text-slate-300">
-            Dicta sunt explicabo. Nemo enim ipsam voluptatem voluptas sit odit
-            aut fugit, sed quia consequuntur. Lorem ipsum dolor.
+            {product.descriptions}
           </p>
-          <p className="my-8 text-lg font-medium text-slate-300">
-            Aquia sit amet, elitr, sed diam nonum eirmod tempor invidunt labore
-            et dolore magna aliquyam.erat, sed diam voluptua. At vero accusam et
-            justo duo dolores et ea rebum.
-          </p>
-          <div>
-            <h4 className="mb-2 text-xl font-semibold">Size</h4>
-            <ul className="flex gap-x-4">
-              <li className="flex h-8 w-8 items-center justify-center rounded-md border border-slate-800 bg-[#12082d] text-xs font-bold text-slate-400">
-                L
-              </li>
-              <li className="flex h-8 w-8 items-center justify-center rounded-md border border-slate-800 bg-[#12082d] text-xs font-bold text-slate-400">
-                M
-              </li>
-              <li className="flex h-8 w-8 items-center justify-center rounded-md border border-slate-800 bg-[#12082d] text-xs font-bold text-slate-400">
-                M
-              </li>
-            </ul>
-          </div>
           <div>
             <div className="my-8 flex h-[46px] items-stretch gap-x-3 lg:w-[80%]">
               <input
@@ -91,11 +87,11 @@ const ProductContainer = () => {
       </div> */}
       <div className="mt-20 px-6">
         <h1 className="text-4xl font-bold">Sản phẩm liên quan</h1>
-        <ul className="mt-8 grid grid-cols-1 gap-x-8 lg:grid-cols-3">
+        {/* <ul className="mt-8 grid grid-cols-1 gap-x-8 lg:grid-cols-3">
           {[1, 2, 3].map(() => (
             <ProductItem />
           ))}
-        </ul>
+        </ul> */}
       </div>
     </div>
   );

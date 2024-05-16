@@ -3,20 +3,20 @@ import { AccountCard, NeonText } from "../../components";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
 import { ArrowRightIcon } from "../../assets/icons";
-import { useGetCategoriesByBannerCodeQuery } from "../../stores/services/master-data-api";
+import { useGetBannerByCodeQuery, useGetCategoriesByBannerCodeQuery } from "../../stores/services/master-data-api";
 
-const GameSection = ({ banner, ...restProps }: any) => {
+const GameSection = ({ bannerConfig, ...restProps }: any) => {
 
-    const { code, name } = banner;
-    const isSeeMore = true;
+    const { code, isSeeMore } = bannerConfig;
 
-    const { data: categories, error, isLoading } = useGetCategoriesByBannerCodeQuery(code);
-    if (isLoading) return <span>loading..</span>
+    const { data: banner, isLoading: bannerLoading } = useGetBannerByCodeQuery(code);
+    const { data: categories, isLoading: categoriesLoading } = useGetCategoriesByBannerCodeQuery(code);
+    if (bannerLoading || categoriesLoading) { return <p>loading...</p> }
 
     return (
         <div className="container mx-auto pt-20 ">
             <div className="px-6 text-center">
-                <NeonText text={name}
+                <NeonText text={banner.name}
                     className="my-12 inline-block text-center text-4xl font-extrabold lg:text-5xl"
                 />
             </div>
@@ -40,7 +40,7 @@ const GameSection = ({ banner, ...restProps }: any) => {
             >
                 {
                     categories.map((category: any) => (
-                        <SwiperSlide>
+                        <SwiperSlide key={category.code}>
                             <AccountCard key={category.id} category={category} />
                         </SwiperSlide>
                     ))

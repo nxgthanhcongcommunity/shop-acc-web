@@ -1,13 +1,33 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import ProductItem from "../../components/product-item";
 import ResponsivePagination from 'react-responsive-pagination';
 import 'react-responsive-pagination/themes/classic.css';
 import './paging.css';
 import { ShopPanelContainer } from "..";
+import { useLocation } from "react-router-dom";
+import { useGetProductsByCategoryCodeQuery } from "../../stores/services/master-data-api";
+import { useQuery } from "../../hooks";
+
+
 
 const ShopContainer = () => {
 
     const [currentPage, setCurrentPage] = useState(1);
+
+    const query = useQuery();
+    const categoryCode: any = ("" + query.get("code"));
+
+    const {
+        data,
+        isLoading
+    } = useGetProductsByCategoryCodeQuery(categoryCode);
+    if (isLoading) { return <p>loading...</p> }
+
+    const {
+        data: products,
+        total,
+    } = data;
+
     const totalPages = 10;
 
     return (
@@ -23,10 +43,10 @@ const ShopContainer = () => {
                                 <option value="volvo">Giá từ thấp đến cao</option>
                             </select>
                         </div>
-                        <ul className="mt-8 grid lg:grid-cols-2 gap-10">
+                        <ul className="mt-8 grid lg:grid-cols-3 gap-10">
                             {
-                                [1, 2, 3, 4].map(() => (
-                                    <ProductItem />
+                                products.map((product: any) => (
+                                    <ProductItem key={product.code} product={product} />
                                 ))
                             }
                         </ul>

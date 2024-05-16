@@ -7,8 +7,8 @@ const Menu = () => {
   return (
     <ul className="hidden gap-x-12 lg:flex items-baseline">
       {menuItems.map((item, index) => (
-        <li>
-          <MenuItem key={index} {...item} />
+        <li key={index}>
+          <MenuItem  {...item} />
         </li>
       ))}
       <li>

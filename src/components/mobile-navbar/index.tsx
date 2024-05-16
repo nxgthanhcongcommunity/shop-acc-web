@@ -18,11 +18,11 @@ const MobileNavbar = (props: any) => {
         <div className="grid gap-y-4 px-6 py-20">
           <ul className="grid gap-y-4">
             {menuItems.map((item, index) => (
-              <li>
+              <li key={index}>
                 <MobileMenuItem {...item} />
               </li>
             ))}
-            <li>
+            <li key={menuItems.length}>
               <Link to="/">
                 <NeonText text="Nạp thẻ"
                   className="inline-block text-center text-2xl font-extrabold"

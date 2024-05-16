@@ -3,8 +3,16 @@ import { Outlet, useLocation } from "react-router-dom";
 import { HeaderContainer } from ".";
 import { MenuToggle, MobileNavbar } from "../components";
 import Footer from "./footer";
+import { useDispatch } from "../stores/hooks";
+import { getByKey } from "../stores/features/masterSlice";
 
 const Layout = () => {
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getByKey("home-page"));
+    }, []);
 
     const { pathname } = useLocation();
 

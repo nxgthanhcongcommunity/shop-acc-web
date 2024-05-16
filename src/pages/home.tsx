@@ -1,21 +1,22 @@
+import { useEffect } from "react";
 import { GameSection, LatestNewsSection, MainSliderSection } from "../containers";
-import { useGetBannersQuery } from "../stores/services/master-data-api";
+import { getByKey, selectMaster, selectMasterLoading } from "../stores/features/masterSlice";
+import { useDispatch, useSelector } from '../stores/hooks';
 
 const Home = () => {
 
-  const { data, error, isLoading } = useGetBannersQuery();
-  if (isLoading) return <span>loading..</span>
-  const banners = data.data;
+  const masterData = useSelector(selectMaster);
+  const masterDataLoading = useSelector(selectMasterLoading);
 
-  const sortedData = [...banners].sort((a: any, b: any) => a.order - b.order);
+  if (masterDataLoading) { return <p>loading...</p> }
 
-  console.log(sortedData)
+  const bannerConfigs = masterData.entity.banners;
 
   return (
     <>
       <MainSliderSection />
-      {banners && sortedData.map((item: any) => (
-        <GameSection banner={item} />
+      {bannerConfigs && bannerConfigs.map((bannerConfig: any) => (
+        <GameSection key={bannerConfig.code} bannerConfig={bannerConfig} />
       ))}
       <LatestNewsSection />
     </>

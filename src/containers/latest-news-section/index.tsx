@@ -53,8 +53,8 @@ const LatestNew = () => {
                     grabCursor={true}
                 >
                     {
-                        fakeData.map((item) => (
-                            <SwiperSlide>
+                        fakeData.map((item, index) => (
+                            <SwiperSlide key={index}>
                                 <LatestNewItem {...item} />
                             </SwiperSlide>
                         ))

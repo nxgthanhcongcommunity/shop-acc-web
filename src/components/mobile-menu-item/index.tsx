@@ -28,7 +28,7 @@ const MobileMenuItem = (props: any) => {
         >
           {subMenuItems &&
             subMenuItems.map(({ title, href }: any) => (
-              <li className="px-6 py-2">
+              <li key={title} className="px-6 py-2">
                 <span className="relative after:absolute after:left-0 after:top-full after:h-[2px] after:w-0 after:bg-slate-400 after:duration-100 hover:after:w-full">
                   {title}
                 </span>
