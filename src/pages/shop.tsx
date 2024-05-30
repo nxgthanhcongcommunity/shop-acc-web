@@ -6,7 +6,6 @@ const Shop = () => {
     <>
       <BreadCrumb />
       <ShopContainer />
-      {/* <BankCard /> */}
     </>
   );
 };

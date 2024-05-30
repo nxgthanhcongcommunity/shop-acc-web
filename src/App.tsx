@@ -1,4 +1,4 @@
-import { HomePage, ProductPage, ShopPage, SignupPage } from "./pages";
+import { HomePage, ProductPage, ShopPage, SignupPage, ViewCartPage } from "./pages";
 
 import {
   createBrowserRouter,
@@ -29,6 +29,10 @@ const router = createBrowserRouter([
         path: "product",
         element: <ProductPage />,
       },
+      {
+        path: "view-cart",
+        element: <ViewCartPage />,
+      },
       // {
       //   path: "/courses",
       //   element: <Courses />,
@@ -41,7 +45,7 @@ const router = createBrowserRouter([
     ],
   },
 ], {
-  basename: "/shop-acc-web"
+  basename: "/web"
 });
 
 function App() {

@@ -1,7 +1,6 @@
-import { useEffect } from "react";
 import { GameSection, LatestNewsSection, MainSliderSection } from "../containers";
-import { getByKey, selectMaster, selectMasterLoading } from "../stores/features/masterSlice";
-import { useDispatch, useSelector } from '../stores/hooks';
+import { selectMaster, selectMasterLoading } from "../stores/features/masterSlice";
+import { useSelector } from '../stores/hooks';
 
 const Home = () => {
 

@@ -1,14 +1,15 @@
-import { useMemo, useState } from "react";
-import ProductItem from "../../components/product-item";
+import { useState } from "react";
 import ResponsivePagination from 'react-responsive-pagination';
 import 'react-responsive-pagination/themes/classic.css';
-import './paging.css';
 import { ShopPanelContainer } from "..";
-import { useLocation } from "react-router-dom";
-import { useGetProductsByCategoryCodeQuery } from "../../stores/services/master-data-api";
+import ProductItem from "../../components/product-item";
 import { useQuery } from "../../hooks";
-
-
+import { useGetProductsByCategoryCodeQuery } from "../../stores/services/master-data-api";
+import './paging.css';
+import { MenuCart } from "../../components/cart";
+import { XmarkIcon } from "../../assets/icons";
+import { Link } from "react-router-dom";
+import { Button } from "../../components";
 
 const ShopContainer = () => {
 
@@ -23,10 +24,7 @@ const ShopContainer = () => {
     } = useGetProductsByCategoryCodeQuery(categoryCode);
     if (isLoading) { return <p>loading...</p> }
 
-    const {
-        data: products,
-        total,
-    } = data;
+    const { data: products, } = data;
 
     const totalPages = 10;
 
@@ -36,11 +34,11 @@ const ShopContainer = () => {
                 <div className="col-span-2">
                     <div>
                         <div className="flex justify-between lg:flex-row flex-col">
-                            <p className="lg:block hidden lg:text-xl text-[#baafdc] font-medium">Hiển thị 1-6 trên 8 mục</p>
-                            <select name="cars" id="cars" className="outline-none bg-transparent lg:text-xl font-medium w-[300px]">
-                                <option value="volvo">Giá từ thấp đến cao</option>
-                                <option value="volvo">Giá từ thấp đến cao</option>
-                                <option value="volvo">Giá từ thấp đến cao</option>
+                            <p className="lg:block hidden lg:text-md text-2Like font-medium">Hiển thị 1-6 trên 8 mục</p>
+                            <select name="cars" id="cars" className="outline-none bg-transparent lg:text-md font-medium w-[200px]">
+                                <option value="volvo" className="text-black font-medium">Giá từ thấp đến cao</option>
+                                <option value="volvo" className="text-black font-medium">Giá từ thấp đến cao</option>
+                                <option value="volvo" className="text-black font-medium">Giá từ thấp đến cao</option>
                             </select>
                         </div>
                         <ul className="mt-8 grid lg:grid-cols-3 gap-10">

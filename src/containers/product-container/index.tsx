@@ -1,9 +1,9 @@
+import { Link } from "react-router-dom";
 import { CartShoppingIcon, HeartIcon } from "../../assets/icons";
 import ProductItem from "../../components/product-item";
 import { useQuery } from "../../hooks";
 import { useGetProductByCodeQuery } from "../../stores/services/master-data-api";
 import ProductSlider from "./product-slider";
-const { REACT_APP_API_URL } = process.env;
 
 const ProductContainer = () => {
 
@@ -11,13 +11,13 @@ const ProductContainer = () => {
   const productCode: any = ("" + query.get("code"));
 
   const {
-    data: product,
+    data,
     isLoading
   } = useGetProductByCodeQuery(productCode);
-  if (isLoading || product == null) { return <p>loading...</p> }
 
+  if (isLoading || data == null) { return <p>loading...</p> }
 
-  console.log(product)
+  const { product, relatedProducts } = data;
 
   return (
     <div className="mx-auto my-16 max-w-[1290px] lg:my-28">
@@ -44,10 +44,12 @@ const ProductContainer = () => {
                 id=""
                 value={1}
               />
-              <button className="flex grow items-center justify-center gap-x-2 rounded-xl bg-[#1745a5] font-bold text-white hover:bg-blue-700">
-                <CartShoppingIcon className="h-4 w-4" />
-                Buy now
-              </button>
+              <Link to="/view-cart">
+                <button className="flex grow items-center justify-center gap-x-2 rounded-xl bg-[#1745a5] font-bold text-white hover:bg-blue-700">
+                  <CartShoppingIcon className="h-4 w-4" />
+                  Add to cart
+                </button>
+              </Link>
               <span className="flex h-[46px] w-[46px] items-center justify-center rounded-xl bg-[#ff61fb]">
                 <HeartIcon className="h-5 w-5" />
               </span>
@@ -87,11 +89,11 @@ const ProductContainer = () => {
       </div> */}
       <div className="mt-20 px-6">
         <h1 className="text-4xl font-bold">Sản phẩm liên quan</h1>
-        {/* <ul className="mt-8 grid grid-cols-1 gap-x-8 lg:grid-cols-3">
-          {[1, 2, 3].map(() => (
-            <ProductItem />
+        <ul className="mt-8 grid grid-cols-1 gap-x-8 lg:grid-cols-5">
+          {relatedProducts && relatedProducts.map((item: any) => (
+            <ProductItem product={item} key={item.code} />
           ))}
-        </ul> */}
+        </ul>
       </div>
     </div>
   );
