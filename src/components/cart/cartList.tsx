@@ -1,11 +1,17 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { XmarkIcon } from "../../assets/icons";
 import { Button } from "..";
+import { RootState } from "../../stores";
+import CartItemQuantity from "./cartItemQuantity";
+import RemoveFromCart from "./removeFromCart";
 
 const CartList = () => {
+
+    const items = useSelector((state: RootState) => state.cart.items);
+
     return <>
         <ul className="grid max-h-[250px] gap-y-10 overflow-y-scroll">
-            {[1, 2, 6, 6, 6, 6, 6, 6, 6, 3].map((item, index) => (
+            {items.map((item, index) => (
                 <li className="flex justify-between px-4" key={index}>
                     <img
                         src="https://html.nkdev.info/youplay/assets/images/dark/game-bloodborne-500x375.jpg"
@@ -14,25 +20,17 @@ const CartList = () => {
                     />
                     <div className="justfy-center flex grow items-start px-6">
                         <div>
-                            <h5 className="text-lg font-bold">Bloodborne</h5>
+                            <h5 className="text-lg font-bold">{item.name}</h5>
                             <p className="flex gap-x-2 text-md">
-                                <input
-                                    className="w-12 rounded-md border border-slate-600 bg-transparent pl-2 text-slate-300 outline-none"
-                                    type="number"
-                                    name=""
-                                    id=""
-                                    value={1}
-                                />
+                                <CartItemQuantity code={item.code} />
                                 x
                                 <span>
-                                    $30.00
+                                    {item.price} vnđ
                                 </span>
                             </p>
                         </div>
                     </div>
-                    <span>
-                        <XmarkIcon width={14} height={14} className="font-bold cursor-pointer text-slate-600" />
-                    </span>
+                    <RemoveFromCart code={item.code} />
                 </li>
             ))}
         </ul>

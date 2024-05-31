@@ -6,10 +6,6 @@ import ProductItem from "../../components/product-item";
 import { useQuery } from "../../hooks";
 import { useGetProductsByCategoryCodeQuery } from "../../stores/services/master-data-api";
 import './paging.css';
-import { MenuCart } from "../../components/cart";
-import { XmarkIcon } from "../../assets/icons";
-import { Link } from "react-router-dom";
-import { Button } from "../../components";
 
 const ShopContainer = () => {
 
@@ -29,7 +25,7 @@ const ShopContainer = () => {
     const totalPages = 10;
 
     return (
-        <div className="max-w-[1290px] lg:my-28 my-16 mx-auto">
+        <div className="max-w-[1400px] lg:my-28 my-16 mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-12 lg:px-0 px-6">
                 <div className="col-span-2">
                     <div>

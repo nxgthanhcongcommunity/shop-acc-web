@@ -1,0 +1,22 @@
+.image-gallery-slide-wrapper.image-gallery-thumbnails-bottom {
+    height: 500px;
+    overflow: hidden;
+
+    margin-bottom: 20px;
+}
+
+.image-gallery-content.fullscreen .image-gallery-slide-wrapper.image-gallery-thumbnails-bottom {
+    height: auto;
+}
+
+.image-gallery-right-nav .image-gallery-svg,
+.image-gallery-left-nav .image-gallery-svg {
+    height: 50px;
+}
+
+.image-gallery-thumbnails-container {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
-import { CartShoppingIcon, HeartIcon } from "../../assets/icons";
+import { HeartIcon } from "../../assets/icons";
+import { Button } from "../../components";
 import ProductItem from "../../components/product-item";
 import { useQuery } from "../../hooks";
 import { useGetProductByCodeQuery } from "../../stores/services/master-data-api";
-import ProductSlider from "./product-slider";
+import AddToCart from "./addToCart";
+import ProductSlider from "./productSlider";
 
 const ProductContainer = () => {
 
@@ -20,20 +21,30 @@ const ProductContainer = () => {
   const { product, relatedProducts } = data;
 
   return (
-    <div className="mx-auto my-16 max-w-[1290px] lg:my-28">
+    <div className="mx-auto my-16 max-w-[1400px] lg:my-28">
+
+
+
       <div className="grid gap-x-12 px-6 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <div>
             <ProductSlider childsFilesUrl={product.childsFilesUrl} />
           </div>
         </div>
-        <div className="mt-10 lg:col-span-5 lg:mt-0">
+        <div className="lg:col-span-1"></div>
+        <div className="mt-10 lg:col-span-4 lg:mt-0">
+          <p className="mb-6 text-lg font-medium text-textColor">
+            home / shop / Sovereign spirit t-shirt
+          </p>
           <h1 className="text-3xl font-bold lg:text-4xl">
             {product.name}
           </h1>
           <p className="my-4 text-2xl font-semibold">{product.price || "10.000 vnđ"}</p>
-          <p className="my-8 text-lg font-medium text-slate-300">
-            {product.descriptions}
+          <p className="my-8 text-lg font-medium text-textColor">
+            {/* {product.descriptions} */}
+            Dicta sunt explicabo. Nemo enim ipsam voluptatem voluptas sit odit aut fugit, sed quia consequuntur. Lorem ipsum dolor.
+
+            Aquia sit amet, elitr, sed diam nonum eirmod tempor invidunt labore et dolore magna aliquyam.erat, sed diam voluptua. At vero accusam et justo duo dolores et ea rebum.
           </p>
           <div>
             <div className="my-8 flex h-[46px] items-stretch gap-x-3 lg:w-[80%]">
@@ -44,12 +55,7 @@ const ProductContainer = () => {
                 id=""
                 value={1}
               />
-              <Link to="/view-cart">
-                <button className="flex grow items-center justify-center gap-x-2 rounded-xl bg-[#1745a5] font-bold text-white hover:bg-blue-700">
-                  <CartShoppingIcon className="h-4 w-4" />
-                  Add to cart
-                </button>
-              </Link>
+              <AddToCart product={product} />
               <span className="flex h-[46px] w-[46px] items-center justify-center rounded-xl bg-[#ff61fb]">
                 <HeartIcon className="h-5 w-5" />
               </span>
@@ -87,7 +93,7 @@ const ProductContainer = () => {
           </ul>
         </div>
       </div> */}
-      <div className="mt-20 px-6">
+      <div className="mt-40 px-6">
         <h1 className="text-4xl font-bold">Sản phẩm liên quan</h1>
         <ul className="mt-8 grid grid-cols-1 gap-x-8 lg:grid-cols-5">
           {relatedProducts && relatedProducts.map((item: any) => (

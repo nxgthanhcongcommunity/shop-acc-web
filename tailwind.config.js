@@ -12,6 +12,7 @@ module.exports = {
         title: "#9536e8",
         hightLight: "rgb(186, 175, 220)",
         hidden: "#1f1340",
+        textColor: "#BAAFDC",
         "2Like": "#baafdc",
         "3like": "#ff61fb",
       },

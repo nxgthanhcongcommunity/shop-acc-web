@@ -1,19 +1,9 @@
-import { Link } from "react-router-dom";
-import { MagnifyingGlassIcon, XmarkIcon } from "../../assets/icons";
-import { Button } from "../../components";
+import { MagnifyingGlassIcon } from "../../assets/icons";
 import CartList from "../../components/cart/cartList";
 
 const ShopPanel = () => {
     return (
         <div className="bg-[#12082d] p-8 lg:mt-0 mt-24 w-full">
-            <div className="py-4">
-                <h3 className="text-2xl font-bold mb-8 text-3like">Cart</h3>
-
-                <div className="">
-                    <CartList />
-                </div>
-
-            </div>
             <div className="py-6">
                 <h3 className="text-2xl font-semibold mb-8">Search</h3>
                 <div className="flex items-center border-[1px] rounded-xl border-slate-700 text-slate-500">
@@ -47,6 +37,12 @@ const ShopPanel = () => {
                         ))
                     }
                 </ul>
+            </div>
+            <div className="py-4">
+                <h3 className="text-2xl font-bold mb-8">Cart</h3>
+                <div className="">
+                    <CartList />
+                </div>
             </div>
         </div>
     )
