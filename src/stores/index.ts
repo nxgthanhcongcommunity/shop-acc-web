@@ -3,6 +3,7 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 import appReducer from "./features/appSlice";
 import masterReducer from "./features/masterSlice";
 import cartReducer from "./features/cartSlice";
+import authReducer from "./features/authSlice";
 import { masterDataApi } from "./services";
 
 export const store = configureStore({
@@ -10,6 +11,7 @@ export const store = configureStore({
   reducer: {
     app: appReducer,
     master: masterReducer,
+    auth: authReducer,
     cart: cartReducer,
     [masterDataApi.reducerPath]: masterDataApi.reducer,
   },

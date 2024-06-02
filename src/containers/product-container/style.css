@@ -1,0 +1,27 @@
+/* .image-gallery-thumbnails-bottom */
+
+/*
+
+image-gallery-content  image-gallery-thumbnails-bottom fullscreen
+
+*/
+
+.image-gallery-content .image-gallery-slide-wrapper {
+  height: 600px;
+}
+
+.image-gallery-content.fullscreen .image-gallery-slide-wrapper {
+  height: auto;
+}
+
+.image-gallery-content .image-gallery-thumbnails-container {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-gallery-svg {
+  width: 25px !important;
+  height: auto !important;
+}

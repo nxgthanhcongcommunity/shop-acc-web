@@ -8,4 +8,5 @@ export interface IMenuItemProps {
 export interface ISubMenuItem {
   title: string;
   href: string;
+  onClick?: any;
 }

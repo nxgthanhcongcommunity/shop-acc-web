@@ -1,5 +1,5 @@
-
-import { Logo, Menu, UserMenu } from "../../components";
+import { Logo, Menu } from "../../components";
+import RightMenu from "../../components/menu/rightMenu";
 import { useScroll } from "../../hooks";
 import "./style.css";
 
@@ -13,7 +13,7 @@ const Header = () => {
           <Logo />
           <Menu />
         </div>
-        <UserMenu />
+        <RightMenu />
       </div>
     </header>
   );
