@@ -5,7 +5,7 @@ const Button = (props: any) => {
     //#FF61FB
     switch (type) {
         case 'primary': return (
-            <button className={`h-[46px] grow rounded-xl bg-[#1745a5] font-bold text-white hover:bg-blue-700 px-8 duration-150 ${twClasses}`} onClick={onClick}>
+            <button className={`cursor-pointer h-[46px] grow rounded-xl bg-[#1745a5] font-bold text-white hover:bg-blue-700 px-8 duration-150 ${twClasses}`} onClick={onClick}>
                 {children}
             </button>
         )

@@ -11,6 +11,8 @@ const AddToCart = (props: IAddToCartProps) => {
 
     const { product } = props;
 
+    console.log("product: ", product)
+
     const dispatch = useDispatch();
 
     const handleAddToCart = () => {
@@ -23,6 +25,7 @@ const AddToCart = (props: IAddToCartProps) => {
             name: product.name,
             price: product.price,
             quantity: 1,
+            mainFileUrl: product.mainFileUrl,
         }
 
         dispatch(addItem(item));

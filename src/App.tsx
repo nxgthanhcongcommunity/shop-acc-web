@@ -15,8 +15,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./App.css";
 import Layout from "./containers/layout";
-import { AccountInfoPage } from "./pages/account-mamagement";
-import Recharge from "./pages/account-mamagement/recharge";
+import { AccountInfoPage } from "./pages/account-management";
 
 const router = createBrowserRouter(
   [
@@ -42,11 +41,11 @@ const router = createBrowserRouter(
           element: <ViewCartPage />,
         },
         {
-          path: "account-mamagement",
+          path: "account-management",
           element: <AccountManagementPage />,
           children: [
             { index: true, element: <AccountInfoPage /> },
-            { path: "/account-mamagement/recharge", element: <RechargePage /> },
+            { path: "/account-management/recharge", element: <RechargePage /> },
           ],
         },
         // {

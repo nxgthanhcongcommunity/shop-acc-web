@@ -3,20 +3,18 @@ import { AccountCard, NeonText } from "../../components";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
 import { ArrowRightIcon } from "../../assets/icons";
-import { useGetBannerByCodeQuery, useGetCategoriesByBannerCodeQuery } from "../../stores/services/master-data-api";
+import { useGetCategoriesByBannerCodeQuery } from "../../stores/services/master-data-api";
 
-const GameSection = ({ bannerConfig, ...restProps }: any) => {
+const GameSection = ({ banner }: any) => {
 
-    const { code, isSeeMore } = bannerConfig;
-
-    const { data: banner, isLoading: bannerLoading } = useGetBannerByCodeQuery(code);
+    const { name, code, isSeeMore = false } = banner;
     const { data: categories, isLoading: categoriesLoading } = useGetCategoriesByBannerCodeQuery(code);
-    if (bannerLoading || categoriesLoading) { return <p>loading...</p> }
+    if (categoriesLoading) { return <p>loading...</p> }
 
     return (
         <div className="container mx-auto pt-20 ">
             <div className="px-6 text-center">
-                <NeonText text={banner.name}
+                <NeonText text={name}
                     className="my-12 inline-block text-center text-4xl font-extrabold lg:text-5xl"
                 />
             </div>

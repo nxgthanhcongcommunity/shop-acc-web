@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { authApi } from "../../api";
 
-interface ICredential {}
+interface ICredential { }
 
 export const loginWithGoogle = createAsyncThunk(
   "auth/loginWithGoogle",
@@ -13,16 +13,16 @@ export const loginWithGoogle = createAsyncThunk(
 
 const initialState = {
   entity: {
-    account: null,
-    // account: {
-    //   id: 1,
-    //   role: "MEMBER",
-    //   familyName: "Ng",
-    //   givenName: "Thanh Cong",
-    //   email: "nxgthanhcongcommunity@gmail.com",
-    //   photo:
-    //     "https://lh3.googleusercontent.com/a/ACg8ocI54tMFPrecA2UHM6loKvO7as1VP_mS5xkr1jMkgMVbe0fROb0=s96-c",
-    // },
+    // account: null,
+    account: {
+      id: 1,
+      role: "MEMBER",
+      familyName: "Ng",
+      givenName: "Thanh Cong",
+      email: "nxgthanhcongcommunity@gmail.com",
+      photo:
+        "https://lh3.googleusercontent.com/a/ACg8ocI54tMFPrecA2UHM6loKvO7as1VP_mS5xkr1jMkgMVbe0fROb0=s96-c",
+    },
   },
   loading: true,
 };

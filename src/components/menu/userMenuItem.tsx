@@ -12,21 +12,25 @@ const UserMenuItem = (props: any) => {
     dispatch(logout());
   };
 
-  switch (auth.entity.account != null) {
+  const { account } = auth.entity
+
+  switch (account != null) {
     case true:
-      return UserMenuItem.Logged({ handleLogout });
+      return UserMenuItem.Logged({ account, handleLogout });
     default:
       return UserMenuItem.UnLogin();
   }
 };
 
-UserMenuItem.Logged = ({ handleLogout }: any) => {
+UserMenuItem.Logged = ({ account, handleLogout }: any) => {
   return (
     <MenuItem
-      title={<UserIcon className="h-4 w-4" />}
+      title={<>
+        <img src={account.photo} alt="" className="w-6 h-6 rounded-full" />
+      </>}
       subMenuItems={[
-        { title: "Tài khoản", href: "/account-info" },
-        { title: "Nạp thẻ", href: "/recharge" },
+        { title: "Tài khoản", href: "/account-management" },
+        { title: "Nạp thẻ", href: "/account-management/recharge" },
         { title: "Lịch sử", href: "/history" },
         { title: "Đăng xuất", href: "", onClick: handleLogout },
       ]}

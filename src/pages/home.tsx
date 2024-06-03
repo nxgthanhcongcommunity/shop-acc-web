@@ -9,13 +9,13 @@ const Home = () => {
 
   if (masterDataLoading) { return <p>loading...</p> }
 
-  const bannerConfigs = masterData.entity.banners;
+  const { banners } = masterData.entity;
 
   return (
     <>
       <MainSliderSection />
-      {bannerConfigs && bannerConfigs.map((bannerConfig: any) => (
-        <GameSection key={bannerConfig.code} bannerConfig={bannerConfig} />
+      {banners && banners.map((banner: any) => (
+        <GameSection key={banner.code} banner={banner} />
       ))}
       <LatestNewsSection />
     </>

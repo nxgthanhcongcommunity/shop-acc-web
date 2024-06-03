@@ -5,14 +5,6 @@ import { transformResponse } from "./utilities";
 const api = createApi({
     baseQuery,
     endpoints: (build) => ({
-        getBanners: build.query<any, void>({
-            query: () => `banner/get-banners`,
-            transformResponse,
-        }),
-        getBannerByCode: build.query<any, void>({
-            query: (code) => `banner/get-banner-by-code?code=${code}`,
-            transformResponse,
-        }),
         getCategoriesByBannerCode: build.query<any, void>({
             query: (code) => `category/get-categories-by-banner-code?code=${code}`,
             transformResponse,
@@ -30,8 +22,6 @@ const api = createApi({
 
 export const {
 
-    useGetBannersQuery,
-    useGetBannerByCodeQuery,
     useGetCategoriesByBannerCodeQuery,
     useGetProductsByCategoryCodeQuery,
     useGetProductByCodeQuery,

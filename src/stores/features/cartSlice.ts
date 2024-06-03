@@ -6,6 +6,7 @@ interface ICartItem {
     name: string;
     price: number;
     quantity: number;
+    mainFileUrl: string;
 }
 
 interface ICartState {
