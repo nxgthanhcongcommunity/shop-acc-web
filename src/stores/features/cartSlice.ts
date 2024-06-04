@@ -7,6 +7,7 @@ interface ICartItem {
     price: number;
     quantity: number;
     mainFileUrl: string;
+    isChecked?: boolean;
 }
 
 interface ICartState {
@@ -36,7 +37,7 @@ const cartSlice = createSlice({
         addItem: (state, action: PayloadAction<ICartItem>) => {
             const item = state.items.find(item => item.code === action.payload.code);
             if (item) {
-                item.quantity += 1;
+                item.quantity = +item.quantity + 1;
             } else {
                 state.items.push(action.payload);
             }
@@ -62,6 +63,19 @@ const cartSlice = createSlice({
 
             state.items = newArray;
             saveState(state);
+        },
+        toggleCheckItem: (state, action: PayloadAction<string>) => {
+
+            const newArray = state.items.map((item) => {
+                if (item.code === action.payload) {
+                    return { ...item, isChecked: !item.isChecked };
+                } else {
+                    return item;
+                }
+            })
+
+            state.items = newArray;
+            saveState(state);
         }
     }
 })
@@ -80,6 +94,7 @@ export const {
     removeItem,
     clearCart,
     updateItemQuantity,
+    toggleCheckItem,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

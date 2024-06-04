@@ -5,6 +5,7 @@ import { MenuToggle, MobileNavbar } from "../components";
 import Footer from "./footer";
 import { useDispatch } from "../stores/hooks";
 import { getByKey } from "../stores/features/masterSlice";
+import { queryBalance } from "../stores/features/balanceSlice";
 
 const Layout = () => {
 
@@ -12,6 +13,9 @@ const Layout = () => {
 
     useEffect(() => {
         dispatch(getByKey("home-page"));
+        dispatch(queryBalance({
+            accountId: 1,
+        }));
     }, []);
 
     const { pathname } = useLocation();

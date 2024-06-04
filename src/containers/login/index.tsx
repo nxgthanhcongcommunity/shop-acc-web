@@ -5,12 +5,11 @@ import { GoogleIcon } from "../../assets/icons";
 import { RootState } from "../../stores";
 import { loginWithGoogle } from "../../stores/features/authSlice";
 import { useDispatch, useSelector } from "../../stores/hooks";
+import { queryBalance } from "../../stores/features/balanceSlice";
 
 const SignupForm = () => {
   const auth = useSelector((state: RootState) => state.auth);
   const navigate = useNavigate();
-
-  console.log(auth);
 
   useEffect(() => {
     if (auth.entity?.account != null) {
@@ -23,7 +22,20 @@ const SignupForm = () => {
 
   const login = useGoogleLogin({
     onSuccess: async (credential) => {
-      dispatch(loginWithGoogle(credential));
+      const rsLogin = await dispatch(loginWithGoogle(credential));
+
+      if (rsLogin.meta.requestStatus != "fulfilled" || rsLogin.payload == null) {
+        return;
+      }
+
+      if (auth.entity.account == null) {
+        return;
+      }
+
+      const rsGetBalance = await dispatch(queryBalance({ accountId: 1 }))
+      console.log(rsGetBalance);
+
+      navigate(-1);
     },
   });
 

@@ -6,6 +6,8 @@ import { RootState } from "../../stores";
 
 const UserMenuItem = (props: any) => {
   const auth = useSelector((state: RootState) => state.auth);
+  const { entity: balanceEtity } = useSelector((state: RootState) => state.balance);
+
   const dispatch = useDispatch();
 
   const handleLogout = () => {
@@ -16,20 +18,23 @@ const UserMenuItem = (props: any) => {
 
   switch (account != null) {
     case true:
-      return UserMenuItem.Logged({ account, handleLogout });
+      return UserMenuItem.Logged({ balanceEtity, account, handleLogout });
     default:
       return UserMenuItem.UnLogin();
   }
 };
 
-UserMenuItem.Logged = ({ account, handleLogout }: any) => {
+UserMenuItem.Logged = ({ balanceEtity, account, handleLogout }: any) => {
+
+  const { amount = 0 } = balanceEtity;
+
   return (
     <MenuItem
       title={<>
         <img src={account.photo} alt="" className="w-6 h-6 rounded-full" />
       </>}
       subMenuItems={[
-        { title: "Tài khoản", href: "/account-management" },
+        { title: `Tài khoản | ${amount}`, href: "/account-management" },
         { title: "Nạp thẻ", href: "/account-management/recharge" },
         { title: "Lịch sử", href: "/history" },
         { title: "Đăng xuất", href: "", onClick: handleLogout },

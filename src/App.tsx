@@ -44,8 +44,18 @@ const router = createBrowserRouter(
           path: "account-management",
           element: <AccountManagementPage />,
           children: [
-            { index: true, element: <AccountInfoPage /> },
-            { path: "/account-management/recharge", element: <RechargePage /> },
+            {
+              index: true,
+              element: <AccountInfoPage />
+            },
+            {
+              path: "/account-management/account-info",
+              element: <AccountInfoPage />
+            },
+            {
+              path: "/account-management/recharge",
+              element: <RechargePage />
+            },
           ],
         },
         // {

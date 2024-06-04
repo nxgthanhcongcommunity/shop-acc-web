@@ -4,6 +4,7 @@ import appReducer from "./features/appSlice";
 import masterReducer from "./features/masterSlice";
 import cartReducer from "./features/cartSlice";
 import authReducer from "./features/authSlice";
+import balanceReducer from "./features/balanceSlice";
 import { masterDataApi } from "./services";
 
 export const store = configureStore({
@@ -12,6 +13,7 @@ export const store = configureStore({
     app: appReducer,
     master: masterReducer,
     auth: authReducer,
+    balance: balanceReducer,
     cart: cartReducer,
     [masterDataApi.reducerPath]: masterDataApi.reducer,
   },

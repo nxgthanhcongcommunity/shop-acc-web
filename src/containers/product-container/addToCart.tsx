@@ -17,7 +17,7 @@ const AddToCart = (props: IAddToCartProps) => {
 
     const handleAddToCart = () => {
 
-        debugger
+
 
         const item = {
             id: product.id,

@@ -11,18 +11,19 @@ export const loginWithGoogle = createAsyncThunk(
   },
 );
 
+
 const initialState = {
   entity: {
-    // account: null,
-    account: {
-      id: 1,
-      role: "MEMBER",
-      familyName: "Ng",
-      givenName: "Thanh Cong",
-      email: "nxgthanhcongcommunity@gmail.com",
-      photo:
-        "https://lh3.googleusercontent.com/a/ACg8ocI54tMFPrecA2UHM6loKvO7as1VP_mS5xkr1jMkgMVbe0fROb0=s96-c",
-    },
+    account: null,
+    // account: {
+    //   id: 1,
+    //   role: "MEMBER",
+    //   familyName: "Ng",
+    //   givenName: "Thanh Cong",
+    //   email: "nxgthanhcongcommunity@gmail.com",
+    //   photo:
+    //     "https://lh3.googleusercontent.com/a/ACg8ocI54tMFPrecA2UHM6loKvO7as1VP_mS5xkr1jMkgMVbe0fROb0=s96-c",
+    // },
   },
   loading: true,
 };
@@ -37,6 +38,7 @@ const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(loginWithGoogle.fulfilled, (state, action) => {
+
       state.loading = false;
       const responseData = action.payload;
 
@@ -52,8 +54,6 @@ const authSlice = createSlice({
         },
         ...responseData,
       };
-
-      console.log(transformData);
 
       state.entity = transformData;
     });

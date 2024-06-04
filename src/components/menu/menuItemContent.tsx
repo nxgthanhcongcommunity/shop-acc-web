@@ -10,7 +10,7 @@ const MenuItemContent = (props: any) => {
       <ul className="grid py-2">
         {subMenuItems &&
           subMenuItems.map(({ title, href, onClick }: any, index: number) => (
-            <li className="flex h-12 w-[225px] items-center px-8" key={index}>
+            <li className="flex h-16 w-[275px] items-center px-8" key={index}>
               <LinkItem href={href} title={title} onClick={onClick} />
             </li>
           ))}
