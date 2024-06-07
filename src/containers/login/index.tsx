@@ -3,37 +3,36 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { GoogleIcon } from "../../assets/icons";
 import { RootState } from "../../stores";
-import { loginWithGoogle } from "../../stores/features/authSlice";
 import { useDispatch, useSelector } from "../../stores/hooks";
-import { queryBalance } from "../../stores/features/balanceSlice";
+import { authApi } from "../../api";
+import { JwtPayload, jwtDecode } from "jwt-decode";
+import { assignAuthInfo } from "../../stores/features/authSlice";
+
+interface IDecoded extends JwtPayload {
+  account: any;
+}
 
 const SignupForm = () => {
   const auth = useSelector((state: RootState) => state.auth);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (auth.entity?.account != null) {
-      return navigate("/");
+    if (auth.entity != null) {
+      navigate(-1);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [auth.entity?.account]);
+  }, [auth.entity]);
+
 
   const dispatch = useDispatch();
-
   const login = useGoogleLogin({
     onSuccess: async (credential) => {
-      const rsLogin = await dispatch(loginWithGoogle(credential));
 
-      if (rsLogin.meta.requestStatus != "fulfilled" || rsLogin.payload == null) {
-        return;
-      }
+      const response = await authApi.LoginWithGoogle(credential);
+      const { token, refreshToken } = response;
 
-      if (auth.entity.account == null) {
-        return;
-      }
-
-      const rsGetBalance = await dispatch(queryBalance({ accountId: 1 }))
-      console.log(rsGetBalance);
+      const decoded = jwtDecode<IDecoded>(token);
+      dispatch(assignAuthInfo(decoded.account));
 
       navigate(-1);
     },

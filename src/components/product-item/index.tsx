@@ -1,37 +1,47 @@
 import { Link } from "react-router-dom";
-import {
-  ArrowRightIcon,
-  CartShoppingIcon,
-  HeartIcon,
-} from "../../assets/icons";
-import { useState } from "react";
-const { REACT_APP_API_URL } = process.env
+import CdlImage from "../cdl-image";
+import { useDispatch } from "../../stores/hooks";
+import { addItem } from "../../stores/features/cartSlice";
 
 const ProductItem = ({ product }: any) => {
 
-  const [isShowIcons, setIsShowIcons] = useState<boolean>(false);
+  const dispatch = useDispatch();
+
+  const cartItem = {
+    id: product.id,
+    code: product.code,
+    name: product.name,
+    price: product.price,
+    quantity: 1,
+    mainFileCLDId: product.mainFileCLDId,
+  }
+
+  const handleCartClick = () => {
+    dispatch(addItem(cartItem))
+  }
 
   return (
     <div>
       <div className="relative ">
-        <div onMouseEnter={() => setIsShowIcons(true)} onMouseLeave={() => setIsShowIcons(false)}>
+        <div className="group">
           <div className="relative h-[200px] overflow-hidden">
             <div className="absolute z-10 h-full w-full bg-[#160962] opacity-20 pointer-events-none"></div>
-            <img
-              className={`h-full w-full duration-300 object-cover ${isShowIcons ? "scale-110" : "scale-100"}`}
-              src={`${REACT_APP_API_URL}/public/products/${product.mainFileUrl}`}
-              alt=""
-            />
+            <div className="h-full w-full duration-300 object-cover scale-100 group-hover:scale-110">
+              <CdlImage id={product.mainFileCLDId} />
+            </div>
           </div>
-          <div className="absolute left-4 top-4">-8%</div>
-          <ul className={`duration-300 absolute left-1/2 flex top-1/2 -translate-x-1/2 -translate-y-1/2 gap-x-3 z-20 ${isShowIcons ? "opacity-100" : "opacity-0"}`}>
+          <span className="text-sm absolute right-4 bottom-4">sl: {product.quantity.currentQuantity}</span>
+          <ul className="duration-300 absolute left-1/2 flex top-1/2 -translate-x-1/2 -translate-y-1/2 gap-x-3 z-20 opacity-0 group-hover:opacity-100">
             <li>
               <button className="bg-white w-9 h-9 flex justify-center items-center rounded-md">
                 <i className="ti ti-heart text-black text-xs"></i>
               </button>
             </li>
             <li>
-              <button className="bg-white w-9 h-9 flex justify-center items-center rounded-md">
+              <button
+                className="bg-white w-9 h-9 flex justify-center items-center rounded-md"
+                onClick={handleCartClick}
+              >
                 <i className="ti ti-shopping-cart text-black"></i>
               </button>
             </li>
@@ -55,7 +65,6 @@ const ProductItem = ({ product }: any) => {
         <p>
           <span className="mr-2 font-medium">Gem/Chono:</span>
           <span>50.000</span>
-          {/* <span>{product.gemChono}</span> */}
         </p>
 
       </div>

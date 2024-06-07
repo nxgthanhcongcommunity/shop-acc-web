@@ -1,4 +1,8 @@
 
+interface IButtonProps {
+    type: string;
+}
+
 const Button = (props: any) => {
 
     const { type, twClasses, onClick, children } = props;

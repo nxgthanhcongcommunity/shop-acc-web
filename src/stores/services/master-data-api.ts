@@ -9,8 +9,8 @@ const api = createApi({
             query: (code) => `category/get-categories-by-banner-code?code=${code}`,
             transformResponse,
         }),
-        getProductsByCategoryCode: build.query<any, void>({
-            query: (code) => `product/get-products-by-category-code?code=${code}`,
+        getCategoryByCode: build.query<any, void>({
+            query: (code) => `category/get-category-by-code?code=${code}`,
             transformResponse,
         }),
         getProductByCode: build.query<any, void>({
@@ -23,7 +23,7 @@ const api = createApi({
 export const {
 
     useGetCategoriesByBannerCodeQuery,
-    useGetProductsByCategoryCodeQuery,
+    useGetCategoryByCodeQuery,
     useGetProductByCodeQuery,
 
 } = api;

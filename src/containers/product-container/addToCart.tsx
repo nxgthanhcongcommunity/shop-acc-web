@@ -25,7 +25,7 @@ const AddToCart = (props: IAddToCartProps) => {
             name: product.name,
             price: product.price,
             quantity: 1,
-            mainFileUrl: product.mainFileUrl,
+            mainFileCLDId: product.mainFileCLDId,
         }
 
         dispatch(addItem(item));

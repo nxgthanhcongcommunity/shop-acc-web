@@ -3,7 +3,7 @@ import {
   ProductPage,
   ShopPage,
   SignupPage,
-  ViewCartPage,
+  OrderPage,
   AccountManagementPage,
   RechargePage,
 } from "./pages";
@@ -16,6 +16,8 @@ import "swiper/css/pagination";
 import "./App.css";
 import Layout from "./containers/layout";
 import { AccountInfoPage } from "./pages/account-management";
+import { BasketTab, PaymentTab, ReceivedTab } from "./pages/order";
+import PrivateRoute from "./components/private-route";
 
 const router = createBrowserRouter(
   [
@@ -37,8 +39,22 @@ const router = createBrowserRouter(
           element: <ProductPage />,
         },
         {
-          path: "view-cart",
-          element: <ViewCartPage />,
+          path: "order",
+          element: <OrderPage />,
+          children: [
+            {
+              index: true,
+              element: <BasketTab />
+            },
+            {
+              path: "payment",
+              element: <PaymentTab />
+            },
+            {
+              path: "received",
+              element: <ReceivedTab />
+            },
+          ],
         },
         {
           path: "account-management",
@@ -49,11 +65,11 @@ const router = createBrowserRouter(
               element: <AccountInfoPage />
             },
             {
-              path: "/account-management/account-info",
+              path: "account-info",
               element: <AccountInfoPage />
             },
             {
-              path: "/account-management/recharge",
+              path: "recharge",
               element: <RechargePage />
             },
           ],

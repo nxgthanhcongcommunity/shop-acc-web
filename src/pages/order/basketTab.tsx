@@ -1,12 +1,12 @@
-
-import { Button } from "../../components";
+import { Link } from "react-router-dom";
+import { Button, CdlImage } from "../../components";
+// import ToggleCheckedItem from "";
 import { useTotal } from "../../hooks";
 import { RootState } from "../../stores";
 import { useSelector } from "../../stores/hooks";
-import { IBasketTabProps } from "./props";
-import ToggleCheckedItem from "./toggleCheckItem";
+import ToggleCheckedItem from "../../containers/view-cart-container/toggleCheckItem";
 
-const BasketTab = ({ handleTabChange }: IBasketTabProps) => {
+const BasketTab = () => {
 
     const items = useSelector((state: RootState) => state.cart.items);
     const checkedItems = items.filter(item => item.isChecked === true);
@@ -52,7 +52,7 @@ const BasketTab = ({ handleTabChange }: IBasketTabProps) => {
                                     >
                                         <div className="flex items-center gap-x-4">
                                             <span className="w-16 h-16 rounded-full overflow-hidden block">
-                                                <img src={item.mainFileUrl} alt="" />
+                                                <CdlImage id={item.mainFileCLDId} />
                                             </span>
                                             {item.name}
                                         </div>
@@ -102,7 +102,9 @@ const BasketTab = ({ handleTabChange }: IBasketTabProps) => {
                         </tbody>
                     </table>
                     <div className="mt-12">
-                        <Button type="primary" twClasses="w-full" onClick={() => handleTabChange(1)}>Tiếp tục đến bước thanh toán</Button>
+                        <Link to="/order/payment">
+                            <Button type="primary" twClasses="w-full">Tiếp tục đến bước thanh toán</Button>
+                        </Link>
                     </div>
                 </div>
             </div>

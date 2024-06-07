@@ -4,7 +4,7 @@ import 'react-responsive-pagination/themes/classic.css';
 import { ShopPanelContainer } from "..";
 import ProductItem from "../../components/product-item";
 import { useQuery } from "../../hooks";
-import { useGetProductsByCategoryCodeQuery } from "../../stores/services/master-data-api";
+import { useGetCategoryByCodeQuery } from "../../stores/services/master-data-api";
 import './paging.css';
 
 const ShopContainer = () => {
@@ -17,11 +17,10 @@ const ShopContainer = () => {
     const {
         data,
         isLoading
-    } = useGetProductsByCategoryCodeQuery(categoryCode);
+    } = useGetCategoryByCodeQuery(categoryCode);
     if (isLoading) { return <p>loading...</p> }
 
-    const { data: products, } = data;
-
+    const { products } = data;
     const totalPages = 10;
 
     return (

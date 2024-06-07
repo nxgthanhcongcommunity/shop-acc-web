@@ -2,14 +2,24 @@
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import "./productSlider.css";
+import { CdlImage } from "../../components";
 
-const { REACT_APP_API_URL } = process.env
+interface IProductSliderProps {
+  childsFilesCLDId: string;
+}
 
-const ProductSlider = ({ childsFilesUrl }: any) => {
+const ProductSlider = ({ childsFilesCLDId }: IProductSliderProps) => {
 
-  const sliderImages = JSON.parse(childsFilesUrl).map((url: string) => ({
-    original: `${REACT_APP_API_URL}/public/products/${url}`,
-    thumbnail: `${REACT_APP_API_URL}/public/products/${url}`,
+  let images: string[] = []
+
+  try {
+    images = JSON.parse(childsFilesCLDId);
+  } catch {
+
+  }
+
+  const sliderImages = images.map(url => ({
+    original: url,
   }));
 
   return (
@@ -18,6 +28,16 @@ const ProductSlider = ({ childsFilesUrl }: any) => {
         additionalClass=""
         items={sliderImages}
         showPlayButton={false}
+        renderItem={(item) => {
+          return (
+            <CdlImage id={item.original} />
+          )
+        }}
+        renderThumbInner={(item) => {
+          return (
+            <CdlImage id={item.original} />
+          )
+        }}
       />
     </div>
   );

@@ -22,13 +22,10 @@ const ProductContainer = () => {
 
   return (
     <div className="mx-auto my-16 max-w-[1400px] lg:my-28">
-
-
-
       <div className="grid gap-x-12 px-6 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <div>
-            <ProductSlider childsFilesUrl={product.childsFilesUrl} />
+            <ProductSlider childsFilesCLDId={product.childsFilesCLDId} />
           </div>
         </div>
         <div className="lg:col-span-1"></div>

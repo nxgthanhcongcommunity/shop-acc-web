@@ -6,7 +6,7 @@ interface ICartItem {
     name: string;
     price: number;
     quantity: number;
-    mainFileUrl: string;
+    mainFileCLDId: string;
     isChecked?: boolean;
 }
 

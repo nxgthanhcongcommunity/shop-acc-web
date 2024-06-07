@@ -7,3 +7,7 @@ export { default as Logo } from "./logo";
 export { default as Menu } from "./menu";
 export { default as Button } from "./button";
 export { default as CopyInput } from "./copy-input";
+export { default as CdlImage } from "./cdl-image";
+export { default as PrivateRoute } from "./private-route";
+
+

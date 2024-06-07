@@ -1,6 +1,9 @@
 import { Button } from "../../components";
 
-const OrderReceived = () => {
+const ReceivedTab = () => {
+
+
+
     return (
         <div>
             <h2 className="text-xl text-hightLight font-medium mb-6">Cảm ơn bạn, đơn hàng đã được ghi nhận. Chúng tôi gửi thông tin tài khoản qua email, Vui lòng check email sau vài phút nữa.</h2>
@@ -93,4 +96,4 @@ const OrderReceived = () => {
     )
 }
 
-export default OrderReceived;
+export default ReceivedTab;
