@@ -17,7 +17,6 @@ import "./App.css";
 import Layout from "./containers/layout";
 import { AccountInfoPage } from "./pages/account-management";
 import { BasketTab, PaymentTab, ReceivedTab } from "./pages/order";
-import PrivateRoute from "./components/private-route";
 
 const router = createBrowserRouter(
   [
@@ -44,15 +43,15 @@ const router = createBrowserRouter(
           children: [
             {
               index: true,
-              element: <BasketTab />
+              element: <BasketTab />,
             },
             {
               path: "payment",
-              element: <PaymentTab />
+              element: <PaymentTab />,
             },
             {
               path: "received",
-              element: <ReceivedTab />
+              element: <ReceivedTab />,
             },
           ],
         },
@@ -62,15 +61,15 @@ const router = createBrowserRouter(
           children: [
             {
               index: true,
-              element: <AccountInfoPage />
+              element: <AccountInfoPage />,
             },
             {
               path: "account-info",
-              element: <AccountInfoPage />
+              element: <AccountInfoPage />,
             },
             {
               path: "recharge",
-              element: <RechargePage />
+              element: <RechargePage />,
             },
           ],
         },

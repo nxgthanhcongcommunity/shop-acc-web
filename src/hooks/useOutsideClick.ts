@@ -1,21 +1,40 @@
-import React from "react";
+import { RefObject, useEffect, useRef, useState } from "react";
 
-const useOutsideClick = (callback: any) => {
-    const ref = React.useRef<any>();
+type UseOutsideClickReturn<T extends HTMLElement> = [
+  boolean,
+  RefObject<T>,
+  () => void,
+  () => void,
+];
 
-    React.useEffect(() => {
-        const handleClick = (event: any) => {
-            callback();
-        };
+const useOutsideClick = <T extends HTMLElement>(): UseOutsideClickReturn<T> => {
+  const [isShow, setIsShow] = useState(false);
+  const handleClick = () => {
+    setIsShow(true);
+  };
 
-        document.addEventListener('click', handleClick);
+  const dropDownRef = useRef<T>(null);
+  const handleOutsideClick = (e: MouseEvent) => {
+    if (
+      dropDownRef.current &&
+      !dropDownRef.current.contains(e.target as Node)
+    ) {
+      setIsShow(false);
+    }
+  };
 
-        return () => {
-            document.removeEventListener('click', handleClick);
-        };
-    }, []);
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
 
-    return ref;
+  const handleMouseLeave = () => {
+    setIsShow(false);
+  };
+
+  return [isShow, dropDownRef, handleClick, handleMouseLeave];
 };
 
 export default useOutsideClick;

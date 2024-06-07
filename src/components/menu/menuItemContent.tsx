@@ -1,11 +1,12 @@
 import LinkItem from "./linkItem";
 
 const MenuItemContent = (props: any) => {
-  const { isShow, subMenuItems, side } = props;
+  const { isShow, subMenuItems, side, onMouseLeave } = props;
 
   return (
     <div
       className={`hidden__content ${side === "left" ? "hidden__content--left" : "hidden__content--right"} ${isShow && "hidden__content--show"}`}
+      onMouseLeave={onMouseLeave}
     >
       <ul className="grid py-2">
         {subMenuItems &&

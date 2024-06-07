@@ -1,19 +1,18 @@
 import { useState } from "react";
 import { CartShoppingIcon, XmarkIcon } from "../../assets/icons";
-import { Link } from "react-router-dom";
-import { Button } from "..";
+import useOutsideClick from "../../hooks/useOutsideClick";
 import CartList from "./cartList";
 
 const MenuCart = {
   PC: (props: any) => {
-
-    const { isShow } = props;
+    const { isShow, onMouseLeave } = props;
 
     return (
       <div
-        className={`cursor-auto hidden__content hidden__content--left ${isShow && "hidden__content--show"}`}
+        className={`hidden__content hidden__content--left cursor-auto ${isShow && "hidden__content--show"}`}
+        onMouseLeave={onMouseLeave}
       >
-        <div className="px-6 py-8 min-w-[500px]">
+        <div className="min-w-[500px] px-6 py-8">
           <CartList />
         </div>
       </div>
@@ -57,28 +56,17 @@ const MenuCart = {
       </div>
     );
   },
-}
+};
 
 const Cart = {
   PC: () => {
-    const [isVisible, setIsVisible] = useState(false);
-
-    const handleMouseEnter = () => {
-      setIsVisible(true);
-    };
-
-    const handleMouseLeave = () => {
-      setIsVisible(false);
-    };
+    const [isShow, dropDownRef, handleClick, handleMouseLeave] =
+      useOutsideClick<HTMLDivElement>();
 
     return (
-      <div
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        className="group relative cursor-pointer after:absolute after:top-full after:right-0 after:w-[150%] after:h-8 after:bg-transparent"
-      >
-        <CartShoppingIcon width={20} height={20} />
-        <MenuCart.PC isShow={isVisible} />
+      <div ref={dropDownRef} className="relative cursor-pointer">
+        <CartShoppingIcon width={20} height={20} onClick={handleClick} />
+        <MenuCart.PC isShow={isShow} onMouseLeave={handleMouseLeave} />
       </div>
     );
   },
@@ -104,7 +92,7 @@ const Cart = {
       </div>
     );
   },
-}
+};
 
 export { MenuCart };
 export default Cart;

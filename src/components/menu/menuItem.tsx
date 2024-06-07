@@ -1,30 +1,23 @@
-import { useState } from "react";
+import useOutsideClick from "../../hooks/useOutsideClick";
 import { IMenuItemProps } from "../../types";
 import MenuItemContent from "./menuItemContent";
 
 const MenuItem = (props: IMenuItemProps) => {
   const { title, side, subMenuItems } = props;
-  const [isHovered, setIsHovered] = useState(false);
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
+  const [isShow, dropDownRef, handleClick, handleMouseLeave] =
+    useOutsideClick<HTMLDivElement>();
 
   return (
-    <div
-      className="group relative flex cursor-pointer flex-col after:absolute after:right-0 after:top-full after:h-8 after:w-[100%] after:bg-transparent"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <h4 className="text-sm font-semibold uppercase">{title}</h4>
+    <div className="relative flex cursor-pointer" ref={dropDownRef}>
+      <h4 className="text-sm font-semibold uppercase" onClick={handleClick}>
+        {title}
+      </h4>
       <MenuItemContent
-        isShow={isHovered}
+        isShow={isShow}
         subMenuItems={subMenuItems}
         side={side}
+        onMouseLeave={handleMouseLeave}
       />
     </div>
   );
