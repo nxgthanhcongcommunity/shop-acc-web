@@ -6,7 +6,7 @@ const invoiceApi = {
     const response = await axiosInstance({
       method: "POST",
       url: "invoice/create",
-      params: data,
+      data: data,
     });
 
     return transformResponse(response);

@@ -5,36 +5,29 @@ import { MenuToggle, MobileNavbar } from "../components";
 import Footer from "./footer";
 import { useDispatch } from "../stores/hooks";
 import { getByKey } from "../stores/features/masterSlice";
-import { queryBalance } from "../stores/features/balanceSlice";
 
 const Layout = () => {
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getByKey("home-page"));
+  }, []);
 
-    useEffect(() => {
-        dispatch(getByKey("home-page"));
-        dispatch(queryBalance({
-            accountId: 1,
-        }));
-    }, []);
+  const { pathname } = useLocation();
 
-    const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [pathname]);
-
-    return (
-        <div
-            className="relative text-white"
-        >
-            <MobileNavbar />
-            <MenuToggle />
-            <HeaderContainer />
-            <Outlet />
-            <Footer />
-        </div>
-    )
-}
+  return (
+    <div className="relative text-white">
+      <MobileNavbar />
+      <MenuToggle />
+      <HeaderContainer />
+      <Outlet />
+      <Footer />
+    </div>
+  );
+};
 
 export default Layout;

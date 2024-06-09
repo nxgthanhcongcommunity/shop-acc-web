@@ -3,11 +3,37 @@ import { Button } from "../../components";
 import { useTotal } from "../../hooks";
 import { RootState } from "../../stores";
 import { useSelector } from "../../stores/hooks";
+import invoiceApi from "../../api/invoiceApi";
 
 const PaymentTab = () => {
   const items = useSelector((state: RootState) => state.cart.items);
   const checkedItems = items.filter((item) => item.isChecked === true);
   const [total] = useTotal(checkedItems);
+
+  const auth = useSelector((state: RootState) => state.auth);
+
+  const handlePayment = async () => {
+    if (items == null || auth.entity == null) return;
+
+    const invoice = {
+      totalAmount: total,
+      accountId: auth.entity?.id,
+    };
+
+    const invoiceDetails = checkedItems.map((checkedItem) => {
+      return {
+        productId: checkedItem.id,
+        quantity: checkedItem.quantity,
+        unitPrice: checkedItem.price,
+        totalPrice: checkedItem.price * checkedItem.quantity,
+      };
+    });
+
+    const response = await invoiceApi.CreateInvoice({
+      invoice,
+      invoiceDetails,
+    });
+  };
 
   return (
     <>
@@ -52,11 +78,12 @@ const PaymentTab = () => {
 
       <div className="mt-12">
         <div className="ml-auto w-1/2">
-          <Link to="/order/received">
-            <Button type="primary" twClasses="w-full">
-              Thanh toán
-            </Button>
-          </Link>
+          {/* <Link to="/order/received">
+            
+          </Link> */}
+          <Button type="primary" twClasses="w-full" onClick={handlePayment}>
+            Thanh toán
+          </Button>
         </div>
       </div>
     </>
