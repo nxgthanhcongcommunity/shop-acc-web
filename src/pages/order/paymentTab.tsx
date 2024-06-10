@@ -1,9 +1,9 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import invoiceApi from "../../api/invoiceApi";
 import { Button } from "../../components";
 import { useTotal } from "../../hooks";
 import { RootState } from "../../stores";
 import { useSelector } from "../../stores/hooks";
-import invoiceApi from "../../api/invoiceApi";
 
 const PaymentTab = () => {
   const items = useSelector((state: RootState) => state.cart.items);

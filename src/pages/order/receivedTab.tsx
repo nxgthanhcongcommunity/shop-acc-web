@@ -1,10 +1,9 @@
-import { Link, useParams, useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
+import invoiceApi from "../../api/invoiceApi";
 import { Button, PrivateRoute } from "../../components";
 import { RootState } from "../../stores";
 import { useSelector } from "../../stores/hooks";
-import { useEffect, useState } from "react";
-import invoiceApi from "../../api/invoiceApi";
-import { useTotal } from "../../hooks";
 
 interface IInvoice {
   code: string;
@@ -17,10 +16,9 @@ interface IInvoice {
 }
 
 const ReceivedTab = () => {
-
   const auth = useSelector((state: RootState) => state.auth);
-  console.log(auth)
-  const [searchParams,] = useSearchParams();
+  console.log(auth);
+  const [searchParams] = useSearchParams();
   const code = searchParams.get("code");
   const [invoice, setInvoice] = useState<IInvoice>();
 
@@ -28,19 +26,15 @@ const ReceivedTab = () => {
     if (!code) return;
 
     (async () => {
-
-      const { succeed, data }: { succeed: boolean, data: IInvoice } = await invoiceApi.GetInvoiceByCode({ code })
+      const { succeed, data }: { succeed: boolean; data: IInvoice } =
+        await invoiceApi.GetInvoiceByCode({ code });
       if (!succeed) return;
       setInvoice(data);
-
-    })()
-
-  }, [code])
+    })();
+  }, [code]);
 
   if (!invoice) {
-    return (
-      <p>loading...</p>
-    )
+    return <p>loading...</p>;
   }
 
   return (
@@ -49,7 +43,9 @@ const ReceivedTab = () => {
 
       <div>
         <h2 className="mb-6 text-xl font-medium text-hightLight">
-          Cảm ơn bạn, đơn hàng đã được ghi nhận. Chúng tôi gửi thông tin tài khoản qua email: <span className="text-3like">{auth.entity?.email}</span>
+          Cảm ơn bạn, đơn hàng đã được ghi nhận. Chúng tôi gửi thông tin tài
+          khoản qua email:{" "}
+          <span className="text-3like">{auth.entity?.email}</span>
         </h2>
         <div className="flex items-stretch gap-x-10 bg-primary p-8">
           <div className="text-sm font-medium">
@@ -79,16 +75,14 @@ const ReceivedTab = () => {
         <h1 className="mb-4 mt-16 text-2xl font-bold">Chi tiết đơn hàng</h1>
         <div className="bg-primary px-12 py-4">
           <ul>
-            {
-              invoice.invoiceDetails.map((detail: any) => (
-                <li>
-                  <div className="flex justify-between border-b border-slate-800 py-7 text-lg font-medium">
-                    <p>{detail.product.name}</p>
-                    <span>{detail.unitPrice}</span>
-                  </div>
-                </li>
-              ))
-            }
+            {invoice.invoiceDetails.map((detail: any) => (
+              <li>
+                <div className="flex justify-between border-b border-slate-800 py-7 text-lg font-medium">
+                  <p>{detail.product.name}</p>
+                  <span>{detail.unitPrice}</span>
+                </div>
+              </li>
+            ))}
 
             <li>
               <div className="flex justify-between border-b border-slate-800 py-7 text-lg font-medium">

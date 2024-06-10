@@ -15,7 +15,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./App.css";
 import Layout from "./containers/layout";
-import { AccountInfoPage } from "./pages/account-management";
+import { AccountInfoPage, ReceivedPage } from "./pages/account-management";
 import { BasketTab, PaymentTab, ReceivedTab } from "./pages/order";
 
 const router = createBrowserRouter(
@@ -71,6 +71,11 @@ const router = createBrowserRouter(
               path: "recharge",
               element: <RechargePage />,
             },
+            {
+              path: "received",
+              element: <ReceivedPage />,
+            },
+            //ReceivedPage
           ],
         },
         // {

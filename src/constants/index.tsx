@@ -31,3 +31,7 @@ export const menuItems: IMenuItemProps[] = [
   },
 ];
 
+export const HTTP_METHODS = {
+  POST: "POST",
+  GET: "GET",
+};
