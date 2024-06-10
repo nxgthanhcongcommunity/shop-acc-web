@@ -7,6 +7,7 @@ interface IAccount {
   givenName: string;
   email: string;
   photo: string;
+  code: string;
 }
 
 interface IAuthState {

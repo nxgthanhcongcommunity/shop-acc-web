@@ -28,13 +28,14 @@ const SignupForm = () => {
   const login = useGoogleLogin({
     onSuccess: async (credential) => {
 
-      const response = await authApi.LoginWithGoogle(credential);
-      const { token, refreshToken } = response;
+      const { succeed, data } = await authApi.LoginWithGoogle(credential);
+      if (!succeed) return;
+      const { token, refreshToken } = data;
 
       const decoded = jwtDecode<IDecoded>(token);
       dispatch(assignAuthInfo(decoded.account));
 
-      navigate(-1);
+      navigate(0);
     },
   });
 

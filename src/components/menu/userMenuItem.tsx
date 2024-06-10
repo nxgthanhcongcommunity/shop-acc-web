@@ -20,11 +20,13 @@ const UserMenuItem = (props: any) => {
   useEffect(() => {
     (async () => {
       if (account != null) {
-        const response = await accountApi.GetBalanceByAccountId({
-          accountId: account.id,
+        const { succeed, data } = await accountApi.GetAccountBalanceByCode({
+          code: account.code,
         });
 
-        setAmount(response.amount);
+        if (!succeed) return;
+
+        setAmount(data.balance.amount);
       }
     })();
   }, [account]);

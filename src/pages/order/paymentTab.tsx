@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../../components";
 import { useTotal } from "../../hooks";
 import { RootState } from "../../stores";
@@ -11,6 +11,7 @@ const PaymentTab = () => {
   const [total] = useTotal(checkedItems);
 
   const auth = useSelector((state: RootState) => state.auth);
+  const navigate = useNavigate();
 
   const handlePayment = async () => {
     if (items == null || auth.entity == null) return;
@@ -29,10 +30,16 @@ const PaymentTab = () => {
       };
     });
 
-    const response = await invoiceApi.CreateInvoice({
+    const { succeed, data } = await invoiceApi.CreateInvoice({
       invoice,
       invoiceDetails,
     });
+
+    if (succeed && data) {
+      navigate(`/order/received?code=${data.code}`);
+    } else {
+      alert("server error, return");
+    }
   };
 
   return (

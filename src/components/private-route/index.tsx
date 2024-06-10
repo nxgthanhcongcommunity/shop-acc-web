@@ -3,7 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { RootState } from "../../stores";
 import { useSelector } from "../../stores/hooks";
 
-const PrivateRoute = () => {
+interface IPrivateRouteProps {
+    preUrl?: string;
+}
+
+const PrivateRoute = (props: IPrivateRouteProps) => {
+
+    const { preUrl } = props;
+
     const navigate = useNavigate();
 
     const auth = useSelector((state: RootState) => state.auth);
@@ -11,7 +18,7 @@ const PrivateRoute = () => {
 
     useEffect(() => {
         if (!isAuthenticated) {
-            navigate("/signup", { replace: true });
+            navigate(`/signup?preurl=${preUrl}`, { replace: true });
         }
     }, [isAuthenticated, navigate]);
 

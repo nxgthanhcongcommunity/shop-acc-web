@@ -1,3 +1,4 @@
+import { IGetBalanceByAccountIdRequest } from "../interface";
 import axiosInstance from "./axiosInstance";
 import { transformResponse } from "./utils";
 
@@ -12,10 +13,10 @@ const accountApi = {
     return response;
   },
 
-  async GetBalanceByAccountId(data: any) {
+  async GetAccountBalanceByCode(data: IGetBalanceByAccountIdRequest) {
     const response = await axiosInstance({
       method: "GET",
-      url: "account/get-balance-by-accountId",
+      url: "account/get-account-balance-by-code",
       params: data,
     });
 

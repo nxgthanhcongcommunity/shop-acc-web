@@ -11,6 +11,17 @@ const invoiceApi = {
 
     return transformResponse(response);
   },
+
+  async GetInvoiceByCode(data: any) {
+    const response = await axiosInstance({
+      method: "GET",
+      url: "invoice/get-invoice-by-code",
+      params: data,
+    });
+
+    return transformResponse(response);
+  },
+
 };
 
 export default invoiceApi;

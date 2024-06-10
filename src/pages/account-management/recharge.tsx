@@ -1,6 +1,9 @@
-import { CopyInput } from "../../components";
+import { Link } from "react-router-dom";
+import { Button, CopyInput } from "../../components";
+
 
 const Recharge = () => {
+
   return (
     <div className="grid w-full grid-cols-2 gap-x-2 p-24">
       <div className="w-full max-w-lg rounded-lg border border-gray-200 bg-white p-5 shadow dark:border-gray-700 dark:bg-gray-800">
@@ -24,7 +27,7 @@ const Recharge = () => {
         <CopyInput />
       </div>
 
-      <div className="w-full max-w-lg rounded-lg border border-gray-200 bg-white p-5 shadow dark:border-gray-700 dark:bg-gray-800">
+      <div className="hidden w-full max-w-lg rounded-lg border border-gray-200 bg-white p-5 shadow dark:border-gray-700 dark:bg-gray-800">
         <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
           QUÉT MÃ QR
         </h2>
@@ -46,6 +49,13 @@ const Recharge = () => {
           />
         </div>
       </div>
+
+      <Button type="primary">
+        <Link to={`s`} target="_blank" rel="noopener noreferrer">
+          VNPAY
+        </Link>
+      </Button>
+
     </div>
   );
 };
