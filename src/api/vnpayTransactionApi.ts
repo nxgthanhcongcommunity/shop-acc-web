@@ -3,11 +3,20 @@ import { ICreatePaymentUrlRequest } from "../interface";
 import axiosInstance from "./axiosInstance";
 import { transformResponse } from "./utils";
 
-const transactionApi = {
+const vnpayTransactionApi = {
   async CreatePaymentUrl(data: ICreatePaymentUrlRequest) {
     const response = await axiosInstance({
       method: HTTP_METHODS.POST,
-      url: "transaction/create-payment-url",
+      url: "vnpay-transaction/create-payment-url",
+      data,
+    });
+
+    return transformResponse(response);
+  },
+  async GetReturnResult(data: any) {
+    const response = await axiosInstance({
+      method: HTTP_METHODS.POST,
+      url: "vnpay-transaction/get-return-result",
       data,
     });
 
@@ -15,4 +24,4 @@ const transactionApi = {
   },
 };
 
-export default transactionApi;
+export default vnpayTransactionApi;

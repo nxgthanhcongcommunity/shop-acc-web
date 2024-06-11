@@ -9,5 +9,7 @@ export { default as Button } from "./button";
 export { default as CopyInput } from "./copy-input";
 export { default as CdlImage } from "./cdl-image";
 export { default as PrivateRoute } from "./private-route";
+export { default as InputField } from "./input-field";
+export { default as SelectField } from "./select-field";
 
 

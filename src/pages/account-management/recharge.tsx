@@ -1,23 +1,33 @@
-import { useNavigate } from "react-router-dom";
-import transactionApi from "../../api/transactionApi";
-import { Button } from "../../components";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { vnpayTransactionApi } from "../../api";
+import { Button, SelectField } from "../../components";
+import { RootState } from "../../stores";
+import { useSelector } from "../../stores/hooks";
 
 const Recharge = () => {
-  const navigate = useNavigate();
+
+  const auth = useSelector((state: RootState) => state.auth);
 
   const handlePayment = async () => {
-    const { succeed, data } = await transactionApi.CreatePaymentUrl({
+    const { succeed, data } = await vnpayTransactionApi.CreatePaymentUrl({
       amount: 10000,
-      provider: "VNPAY",
+      accountCode: "" + auth.entity?.code,
     });
 
     if (!succeed) return;
+    window.location.href = data.paymentUrl;
+  };
 
-    const { paymentUrl } = data;
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
 
-    console.log("paymentUrl:", paymentUrl);
-
-    window.location.href = paymentUrl;
+  const onSubmit: SubmitHandler<any> = async (data) => {
+    console.log(data)
+    reset();
   };
 
   return (
@@ -38,19 +48,7 @@ const Recharge = () => {
           để được hỗ trợ.
         </p>
         <div>
-          <label
-            htmlFor="large"
-            className="mb-2 block text-base font-medium text-gray-900 dark:text-white"
-          >
-            Large select
-          </label>
-          <select
-            id="large"
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-base text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-          >
-            <option selected>Chọn cổng thanh toán</option>
-            <option value="VNPAY">VNPAY</option>
-          </select>
+          <SelectField />
         </div>
         <div className="mt-4">
           <label
