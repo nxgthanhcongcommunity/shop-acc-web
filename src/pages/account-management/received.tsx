@@ -1,7 +1,6 @@
-import { Link, useSearchParams } from "react-router-dom";
-import { Button } from "../../components";
 import { useEffect, useState } from "react";
 import { vnpayTransactionApi } from "../../api";
+import { Button } from "../../components";
 import { paramsToObject } from "../../utils";
 
 interface IParams {
@@ -21,23 +20,25 @@ const Received = () => {
 
   useEffect(() => {
     (async () => {
-
       const paramsObj = paramsToObject(window.location.search);
-      const { succeed, data } = await vnpayTransactionApi.GetReturnResult(paramsObj);
+      const { succeed, data } =
+        await vnpayTransactionApi.GetReturnResult(paramsObj);
 
       if (!succeed) return;
       setIsSucceed(data.code == "00");
       setParams(data.vnp_Params);
-
-    })()
+    })();
   }, []);
 
   const handleFakeIPN = () => {
-    console.log("http://localhost:4003/api/v1/vnpay-transaction/ipn" + window.location.search)
-  }
+    console.log(
+      "http://localhost:4003/api/v1/vnpay-transaction/ipn" +
+        window.location.search,
+    );
+  };
 
   if (params == null) return <p>loading...</p>;
-  if (!isSucceed) return <>có lỗi xải ra....</>
+  if (!isSucceed) return <>có lỗi xải ra....</>;
 
   return (
     <div className="p-8">
