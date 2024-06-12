@@ -1,4 +1,4 @@
-function Component({ field, fieldName, items, register }: any) {
+function SelectField({ field, fieldName, items, errors, register, validator }: any) {
   return (
     <>
       <label
@@ -10,7 +10,7 @@ function Component({ field, fieldName, items, register }: any) {
       <select
         id="countries"
         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        {...register(field)}
+        {...register(field, validator)}
       >
         <option value="">Chọn...</option>
         {items &&
@@ -20,8 +20,9 @@ function Component({ field, fieldName, items, register }: any) {
             </option>
           ))}
       </select>
+      <span className="text-red-800 text-sm">{errors[field]?.message}</span>
     </>
   );
 }
 
-export default Component;
+export default SelectField;

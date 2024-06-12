@@ -1,5 +1,6 @@
 import Cart from "../cart";
 import SearchBar from "../search-bar";
+import Notification from "./notification";
 import UserMenuItem from "./userMenuItem";
 
 const RightMenu = () => {
@@ -10,6 +11,9 @@ const RightMenu = () => {
       </li>
       <li>
         <Cart.PC />
+      </li>
+      <li>
+        <Notification />
       </li>
       <li>
         <UserMenuItem />

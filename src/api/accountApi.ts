@@ -22,6 +22,18 @@ const accountApi = {
 
     return transformResponse(response);
   },
+
+  async MarkNotificationsRead(data: any) {
+
+    const response = await axiosInstance({
+      method: "GET",
+      url: "account/mark-notifications-read",
+      params: data,
+    });
+
+    return transformResponse(response);
+  },
+
 };
 
 export default accountApi;

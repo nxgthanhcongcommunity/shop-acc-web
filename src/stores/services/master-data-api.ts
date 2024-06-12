@@ -17,6 +17,10 @@ const api = createApi({
             query: (code) => `product/get-product-by-code?code=${code}`,
             transformResponse,
         }),
+        getNotifications: build.query<any, string>({
+            query: (code) => `account/get-notifications?accountCode=${code}`,
+            transformResponse,
+        }),
     }),
 });
 
@@ -25,6 +29,7 @@ export const {
     useGetCategoriesByBannerCodeQuery,
     useGetCategoryByCodeQuery,
     useGetProductByCodeQuery,
+    useGetNotificationsQuery,
 
 } = api;
 export default api;

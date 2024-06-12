@@ -1,10 +1,12 @@
-const Component = ({
+const InputField = ({
   field,
   fieldName,
   type,
   register,
   errors,
   defaultValue,
+  placeHolder,
+  validator,
 }: any) => {
   return (
     <>
@@ -18,13 +20,13 @@ const Component = ({
         defaultValue={defaultValue}
         type={type || "text"}
         id={field}
-        placeholder={`${field}...`}
-        {...register(field)}
+        placeholder={`${placeHolder ? placeHolder : ""}...`}
+        {...register(field, validator)}
         className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
       />
-      {errors[field] && <span>This field is required</span>}
+      <span className="text-red-800 text-sm">{errors[field]?.message}</span>
     </>
   );
 };
 
-export default Component;
+export default InputField;

@@ -5,6 +5,7 @@ import { MenuToggle, MobileNavbar } from "../components";
 import Footer from "./footer";
 import { useDispatch } from "../stores/hooks";
 import { getByKey } from "../stores/features/masterSlice";
+import NotificationComponent from "./notification-container";
 
 const Layout = () => {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ const Layout = () => {
 
   return (
     <div className="relative text-white">
+      <NotificationComponent />
       <MobileNavbar />
       <MenuToggle />
       <HeaderContainer />

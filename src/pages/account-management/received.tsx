@@ -12,6 +12,7 @@ interface IParams {
   vnp_TransactionStatus: string | null;
   vnp_TransactionNo: string | null;
   vnp_PayDate: string | null;
+  vnp_TxnRef: string | null;
 }
 
 const Received = () => {
@@ -48,7 +49,7 @@ const Received = () => {
         <div className="text-sm font-medium">
           <p className="uppercase text-hightLight">Mã giao dịch: </p>
           <div className="h-3"></div>
-          <p>{params.vnp_TransactionNo}</p>
+          <p>{params.vnp_TxnRef}</p>
         </div>
         <div className="boder-white w-[1px] border border-l border-dashed"></div>
         <div className="text-sm font-medium">
