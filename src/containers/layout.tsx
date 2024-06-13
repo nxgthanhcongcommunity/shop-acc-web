@@ -1,11 +1,10 @@
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { HeaderContainer } from ".";
-import { MenuToggle, MobileNavbar } from "../components";
+import { MenuToggle, MobileNavbar, ToastList } from "../components";
 import Footer from "./footer";
 import { useDispatch } from "../stores/hooks";
 import { getByKey } from "../stores/features/masterSlice";
-import NotificationComponent from "./notification-container";
 
 const Layout = () => {
   const dispatch = useDispatch();
@@ -14,15 +13,15 @@ const Layout = () => {
     dispatch(getByKey("home-page"));
   }, []);
 
-  const { pathname } = useLocation();
+  // const { pathname } = useLocation();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, [pathname]);
 
   return (
     <div className="relative text-white">
-      <NotificationComponent />
+      <ToastList />
       <MobileNavbar />
       <MenuToggle />
       <HeaderContainer />

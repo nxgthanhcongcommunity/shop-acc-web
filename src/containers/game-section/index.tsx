@@ -12,7 +12,7 @@ const GameSection = ({ banner }: any) => {
     if (categoriesLoading) { return <p>loading...</p> }
 
     return (
-        <div className="container mx-auto pt-20 ">
+        <div className="container mx-auto pt-20" id={code}>
             <div className="px-6 text-center">
                 <NeonText text={name}
                     className="my-12 inline-block text-center text-4xl font-extrabold lg:text-5xl"

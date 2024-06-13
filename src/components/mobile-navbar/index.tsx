@@ -1,15 +1,22 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { UserIcon } from "../../assets/icons";
-import { menuItems } from "../../constants";
 import { RootState } from "../../stores";
+import { selectMaster } from "../../stores/features/masterSlice";
+import { IMenuItemProps } from "../../types";
 import Cart from "../cart";
 import MobileMenuItem from "../mobile-menu-item";
-import SearchBar from "../search-bar";
-import { Link } from "react-router-dom";
 import NeonText from "../neon-text";
+import SearchBar from "../search-bar";
 
 const MobileNavbar = (props: any) => {
   const { activedMobileNav } = useSelector((state: RootState) => state.app);
+
+  const masterData = useSelector(selectMaster);
+  if (masterData == null) { return <p>Loading...</p> }
+
+  const { menuItems }: { menuItems: IMenuItemProps[] } = masterData.entity;
+
   return (
     <div>
       <div
@@ -17,12 +24,12 @@ const MobileNavbar = (props: any) => {
       >
         <div className="grid gap-y-4 px-6 py-20">
           <ul className="grid gap-y-4">
-            {menuItems.map((item, index) => (
+            {menuItems && menuItems.map((item, index) => (
               <li key={index}>
                 <MobileMenuItem {...item} />
               </li>
             ))}
-            <li key={menuItems.length}>
+            <li key={menuItems && menuItems.length}>
               <Link to="/">
                 <NeonText text="Nạp thẻ"
                   className="inline-block text-center text-2xl font-extrabold"

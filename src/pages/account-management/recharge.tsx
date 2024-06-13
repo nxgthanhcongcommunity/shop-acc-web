@@ -51,7 +51,7 @@ const Recharge = () => {
   };
 
   return (
-    <div className="grid w-full grid-cols-2 gap-x-2 p-24">
+    <div className="w-full min-h-[80vh] flex justify-center items-center">
       <form className="w-full max-w-lg rounded-lg border border-gray-200 bg-white p-5 shadow dark:border-gray-700 dark:bg-gray-800"
         onSubmit={handleSubmit(onSubmit)}
       >

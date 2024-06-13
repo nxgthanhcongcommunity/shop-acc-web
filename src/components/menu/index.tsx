@@ -1,9 +1,19 @@
 import { Link } from "react-router-dom";
-import { menuItems } from "../../constants";
+import { selectMaster } from "../../stores/features/masterSlice";
+import { useSelector } from "../../stores/hooks";
+import { IMenuItemProps } from "../../types";
 import NeonText from "../neon-text";
 import MenuItem from "./menuItem";
 
 const Menu = () => {
+
+  const masterData = useSelector(selectMaster);
+
+  if (masterData == null) { return <p>Loading...</p> }
+
+  const { menuItems, highLightItem }: { menuItems: IMenuItemProps[], highLightItem: any } = masterData.entity;
+  if (menuItems == null || highLightItem == null) return <>...</>
+
   return (
     <ul className="hidden items-baseline gap-x-12 lg:flex">
       {menuItems.map((item, index) => (
@@ -12,10 +22,10 @@ const Menu = () => {
         </li>
       ))}
       <li>
-        <Link to="/">
+        <Link to={highLightItem.href}>
           <NeonText
-            text="Nạp thẻ"
-            className="inline-block text-center text-2xl font-extrabold"
+            text={highLightItem.title}
+            className="inline-block text-center text-xl font-extrabold"
           />
         </Link>
       </li>

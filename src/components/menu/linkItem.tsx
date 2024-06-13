@@ -12,6 +12,14 @@ const LinkItem = (props: ISubMenuItem) => {
     );
   }
 
+  if (href.startsWith("#")) {
+    return (
+      <a href={href}>
+        <span className="content__title">{title}</span>
+      </a>
+    )
+  }
+
   return (
     <Link to={href}>
       <span className="content__title">{title}</span>

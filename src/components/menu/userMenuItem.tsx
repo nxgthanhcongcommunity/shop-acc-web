@@ -53,7 +53,6 @@ const UserMenuItem = (props: any) => {
           subMenuItems={[
             { title: `Tài khoản | ${amount}`, href: "/account-management" },
             { title: "Nạp thẻ", href: "/account-management/recharge" },
-            { title: "Lịch sử", href: "/account-management/history" },
             { title: "Đăng xuất", href: "", onClick: handleLogout },
           ]}
           side="left"

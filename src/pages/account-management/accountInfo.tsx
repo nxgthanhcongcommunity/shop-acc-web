@@ -2,7 +2,7 @@ import { CopyInput } from "../../components";
 
 const AccountInfo = () => {
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center min-h-screen">
       <div className="w-full max-w-lg rounded-lg border border-gray-200 bg-white p-5 shadow dark:border-gray-700 dark:bg-gray-800">
         <h2 className="mb-6 text-lg font-semibold text-gray-900 dark:text-white">
           THÔNG TIN TÀI KHOẢN
