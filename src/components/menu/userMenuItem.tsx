@@ -21,7 +21,7 @@ const UserMenuItem = (props: any) => {
     (async () => {
       if (account != null) {
         const { succeed, data } = await accountApi.GetAccountBalanceByCode({
-          code: account.code,
+          accountCode: account.code,
         });
 
         if (!succeed) return;

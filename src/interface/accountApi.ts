@@ -1,3 +1,3 @@
 export interface IGetBalanceByAccountIdRequest {
-    code: string;
+  accountCode: string;
 }
